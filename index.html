@@ -6,7 +6,7 @@
 <meta name="description" content="Pathfinder Elite International Schools, #9 Ediba Lane, off Ediba Road, Calabar. Creche, Reception, Nursery and Primary. Registration is ongoing. Call or WhatsApp +234 803 348 3918.">
 <meta property="og:title" content="Pathfinder Elite International Schools, Calabar">
 <meta property="og:description" content="Creche, Reception, Nursery and Primary. Registration is ongoing. Motto: Determination Personified.">
-<meta property="og:image" content="/img/playground.jpg">
+<meta property="og:image" content="https://pathfinder-elite-schools.vercel.app/img/playground.jpg">
 <meta name="theme-color" content="#16307a">
 <link rel="icon" href="/img/logo.png">
 <title>Pathfinder Elite International Schools</title>
@@ -22,6 +22,8 @@
   --sky-pale:#e8f5fd;
   --sun:#ffcf26;
   --red:#e8423b;
+  /* curb red darkened for text on white (5.6:1) */
+  --red-text:#c42d2d;
   --ink:#283152;
   --muted:#535d7e;
   --paper:#ffffff;
@@ -56,8 +58,9 @@ section{padding-block:104px;position:relative}
 .btn:active{transform:translateY(0)}
 .btn-sun{background:var(--sun);color:var(--navy-deep);box-shadow:0 6px 14px rgba(15,34,87,.18)}
 .btn-white{background:#fff;color:var(--navy)}
-.btn-red{background:var(--red);color:#fff}
-.btn svg{width:18px;height:18px}
+.btn-white .i-wa{fill:#1f8a4c}
+.btn-navy{background:var(--navy);color:#fff}
+.btn svg{width:18px;height:18px;fill:currentColor;flex:none}
 
 /* painted curb: the red / blue / yellow / white blocks around the playground */
 .curb{height:16px;background:repeating-linear-gradient(90deg,var(--red) 0 96px,#fff 96px 100px,var(--sky) 100px 196px,#fff 196px 200px,var(--sun) 200px 296px,#fff 296px 300px,var(--sky) 300px 396px,#fff 396px 400px)}
@@ -68,6 +71,9 @@ section{padding-block:104px;position:relative}
 .topbar .grp{display:flex;flex-wrap:wrap;gap:6px 24px}
 .topbar span{display:inline-flex;align-items:center;gap:8px}
 .topbar svg{width:15px;height:15px;fill:var(--sun);flex:none}
+.topbar a{text-decoration:none}
+.topbar a:hover{color:#fff;text-decoration:underline}
+.topbar .mail{display:inline-flex;align-items:center;gap:8px}
 
 .socials{display:inline-flex;gap:8px;align-items:center}
 .soc{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);transition:background .2s}
@@ -82,15 +88,20 @@ header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .logo-mark{width:58px;height:58px;flex:none;border-radius:50%;background:#fff}
 .logo-text{display:grid;line-height:1.05}
 .logo-text strong{font-family:var(--display);font-size:1.35rem;color:var(--navy);font-weight:700}
-.logo-text small{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-weight:800}
+.logo-text small{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red-text);font-weight:800}
 .menu{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0}
 .menu a{display:block;text-decoration:none;font-family:var(--display);font-weight:600;font-size:1.02rem;padding:10px 14px;border-radius:999px;color:var(--navy)}
-.menu a:hover{color:var(--red)}
+.menu a:hover{color:var(--red-text)}
+.menu .btn:hover{color:var(--navy-deep)}
 .menu .btn{margin-left:10px;padding:12px 24px;color:var(--navy-deep)}
 .burger{display:none;background:var(--sun);border:0;width:48px;height:48px;border-radius:50%;cursor:pointer;align-items:center;justify-content:center}
 .burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2.5px;background:var(--navy);border-radius:2px;position:relative}
 .burger span::before,.burger span::after{content:"";position:absolute;left:0}
 .burger span::before{top:-7px}.burger span::after{top:7px}
+.burger span,.burger span::before,.burger span::after{transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-7px) rotate(-45deg)}
 
 /* hero */
 .hero{position:relative;color:#fff;overflow:hidden;background:var(--navy-deep);padding:0}
@@ -108,9 +119,14 @@ header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px}
 .reg{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-weight:700;color:#dfe7ff;font-size:.95rem;margin-top:6px}
 .reg b{color:var(--sun);font-weight:800}
-.dots{position:absolute;z-index:4;right:max(16px,env(safe-area-inset-right,0px));bottom:36px;display:flex;gap:10px}
-.dots button{width:12px;height:12px;border-radius:999px;border:0;background:rgba(255,255,255,.55);cursor:pointer;padding:0;transition:width .3s,background .3s}
-.dots button.on{width:34px;background:var(--sun)}
+.dots{position:absolute;z-index:4;right:max(8px,env(safe-area-inset-right,0px));bottom:22px;display:flex;align-items:center}
+.dots button{position:relative;width:26px;height:44px;border:0;background:none;cursor:pointer;padding:0;transition:width .3s}
+.dots button::before{content:"";position:absolute;left:7px;right:7px;top:16px;height:12px;border-radius:999px;background:rgba(255,255,255,.6);transition:background .3s}
+.dots button.on{width:48px}
+.dots button.on::before{background:var(--sun)}
+.dots .pause{width:44px;margin-left:4px}
+.dots .pause::before{display:none}
+.dots .pause svg{width:30px;height:30px;margin:auto;display:block;border-radius:50%;background:rgba(15,34,87,.55);padding:8px;fill:#fff}
 
 /* about */
 .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
@@ -120,12 +136,12 @@ header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .scrap .tape{position:absolute;width:110px;height:30px;background:rgba(255,207,38,.82);top:6px;left:38%;transform:rotate(-6deg);border-radius:3px}
 .about-copy{display:grid;gap:22px}
 .about-copy h2{font-size:clamp(2rem,4.4vw,3.1rem)}
-.about-copy > p{color:var(--muted);font-size:1.06rem;max-width:56ch}
+.about-copy > p:not(.motto){color:var(--muted);font-size:1.06rem;max-width:56ch}
 .motto{font-family:var(--script);font-weight:700;font-size:clamp(1.9rem,3.6vw,2.5rem);color:var(--sign-blue);line-height:1.1}
 .motto span{color:var(--sign-pink);font-size:.7em;margin-right:8px}
 .vm{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .vm div{border-radius:14px;padding:20px 22px;border:3px dashed rgba(22,48,122,.22)}
-.vm h4{font-size:1.18rem;margin-bottom:6px;color:var(--sign-pink)}
+.vm h3{font-size:1.3rem;margin-bottom:6px;color:var(--sign-pink)}
 .vm p{font-size:.96rem}
 .vm .v{background:#fff}
 .vm .m{background:#fff6cf}
@@ -159,7 +175,7 @@ header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .cta::before{content:"";position:absolute;inset:0;background:rgba(196,38,38,.88);z-index:1}
 .cta .wrap{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
 .cta h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.6rem);max-width:620px}
-.cta p{color:#ffe4e1;margin-top:10px;font-weight:700;font-size:1.05rem}
+.cta p{color:#fff;margin-top:10px;font-weight:700;font-size:1.05rem}
 
 /* gallery */
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;grid-auto-flow:dense;gap:14px}
@@ -186,7 +202,9 @@ header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backgroun
 .contact-list i{width:48px;height:48px;border-radius:50%;display:grid;place-items:center}
 .contact-list i svg{width:21px;height:21px;fill:#fff}
 .contact-list b{display:block;font-family:var(--display);color:var(--navy);font-weight:600}
-.contact-list span{color:var(--muted);font-size:.97rem;user-select:all;overflow-wrap:anywhere}
+.contact-list span,.contact-list a{color:var(--muted);font-size:.97rem;overflow-wrap:anywhere}
+.contact-list a{color:var(--navy);font-weight:700}
+.contact-list a:hover{color:var(--red-text)}
 form.enquiry{background:var(--navy);border-radius:22px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px;color:#fff}
 form.enquiry h3{grid-column:1/-1;color:#fff;font-size:1.7rem}
 form.enquiry p.sub{grid-column:1/-1;color:#cbd6ff;margin-top:-8px}
@@ -210,8 +228,12 @@ footer a:hover{color:var(--sun);text-decoration:underline}
 footer .logo-text strong{color:#fff}
 footer .motto{color:#fff;font-size:1.7rem}
 footer .motto span{color:var(--sun)}
-.foot p{font-size:.95rem}
+.foot p:not(.motto){font-size:.95rem}
+footer .logo-text small{color:#ff9b94}
 .copy{border-top:1px solid #2a3a78;margin-top:50px;padding-top:22px;font-size:.86rem}
+
+/* call bar: the two real admissions channels, in thumb reach on phones */
+.callbar{display:none}
 
 /* responsive */
 @media (max-width:1040px){
@@ -242,6 +264,9 @@ footer .motto span{color:var(--sun)}
   .topbar .hide-sm{display:none}
   .scrap{padding:14px 24px 46px 4px}
   .curb{height:12px}
+  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:#fff;border-top:1px solid #e3e9f6;box-shadow:0 -8px 22px rgba(15,34,87,.1)}
+  .callbar .btn{justify-content:center;padding:13px 14px}
+  body{padding-bottom:76px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
@@ -252,6 +277,7 @@ footer .motto span{color:var(--sun)}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 000-.4c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.3c0-.1-.2-.2-.5-.3z"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.2l-8 5-8-5V6l8 5 8-5z"/></symbol>
 </svg>
 
@@ -259,9 +285,9 @@ footer .motto span{color:var(--sun)}
   <div class="wrap">
     <div class="grp">
       <span><svg><use href="#i-pin"/></svg>#9 Ediba Lane, off Ediba Road, Calabar Municipality</span>
-      <span class="hide-sm"><svg><use href="#i-mail"/></svg>pathfinderinternational@gmail.com</span>
+      <a class="mail hide-sm" href="mailto:pathfinderinternational@gmail.com"><svg><use href="#i-mail"/></svg>pathfinderinternational@gmail.com</a>
     </div>
-    <div class="grp"><span><svg><use href="#i-phone"/></svg>Call or WhatsApp: +234 803 348 3918</span><span class="socials"><!-- REPLACE the two # links below with the school Facebook and TikTok page URLs --><a class="soc" href="#" target="_blank" rel="noopener" aria-label="Pathfinder Elite on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg></a><a class="soc" href="#" target="_blank" rel="noopener" aria-label="Pathfinder Elite on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.4 2.3 1.9 3.8 4.2 4v3.4c-1.6 0-3-.5-4.2-1.3v6.2a5.8 5.8 0 11-5.8-5.8c.3 0 .6 0 .9.1v3.5a2.4 2.4 0 102 2.3V3z"/></svg></a></span></div>
+    <div class="grp"><span class="hide-sm"><svg><use href="#i-phone"/></svg>Call or WhatsApp: <a href="tel:+2348033483918">+234 803 348 3918</a></span><span class="socials"><!-- REPLACE the two # links below with the school Facebook and TikTok page URLs --><a class="soc" href="#" target="_blank" rel="noopener" aria-label="Pathfinder Elite on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg></a><a class="soc" href="#" target="_blank" rel="noopener" aria-label="Pathfinder Elite on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.4 2.3 1.9 3.8 4.2 4v3.4c-1.6 0-3-.5-4.2-1.3v6.2a5.8 5.8 0 11-5.8-5.8c.3 0 .6 0 .9.1v3.5a2.4 2.4 0 102 2.3V3z"/></svg></a></span></div>
   </div>
 </div>
 
@@ -279,7 +305,7 @@ footer .motto span{color:var(--sun)}
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a class="btn btn-sun" href="#contact">Enrol now</a></li>
+      <li><a class="btn btn-sun" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">Enrol on WhatsApp</a></li>
     </ul>
   </div>
 </header>
@@ -287,30 +313,30 @@ footer .motto span{color:var(--sun)}
 <main id="top">
   <section class="hero">
     <div class="slides" id="slides">
-      <img src="img/playground.jpg" alt="Pathfinder Elite pupils in uniform playing on the swings">
-      <img src="img/seesaw-swings-4.jpg" alt="Pupils on the see-saw and swings in the school playground">
-      <img src="img/seesaw-swing-close.jpg" alt="Pupils enjoying the see-saw and swing">
+      <img src="img/playground.jpg" fetchpriority="high" alt="Pathfinder Elite pupils in uniform playing on the swings">
+      <img data-src="img/seesaw-swings-4.jpg" alt="Pupils on the see-saw and swings in the school playground">
+      <img data-src="img/seesaw-swing-close.jpg" alt="Pupils enjoying the see-saw and swing">
     </div>
     <div class="wrap">
       <div class="hero-copy">
         <h1>Raising <em>determined</em> learners of character and excellence</h1>
         <p>A happy, disciplined school behind the blue gates on Ediba Lane, Calabar, for children from Creche to Primary.</p>
         <div class="hero-ctas">
-          <a class="btn btn-sun" href="#contact">Enrol your child</a>
-          <a class="btn btn-white" href="#about">See the school</a>
+          <a class="btn btn-sun" href="tel:+2348033483918"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call the Principal</a>
+          <a class="btn btn-white" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener"><svg class="i-wa" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp us</a>
         </div>
         <div class="reg"><b>Registration is ongoing:</b> Creche · Reception · Nursery · Primary</div>
       </div>
     </div>
-    <div class="dots" id="dots" aria-label="Choose photo"></div>
+    <div class="dots" id="dots" role="group" aria-label="Hero photos"></div>
   </section>
   <div class="curb" aria-hidden="true"></div>
 
   <section class="about" id="about">
     <div class="wrap">
       <div class="scrap">
-        <img class="main" src="img/gate-car.jpg" alt="The Pathfinder Elite gate, flags and signboard on Ediba Lane, Calabar">
-        <img class="inset" src="img/swings-pair.jpg" alt="Two pupils at the school swings">
+        <img class="main" src="img/gate-car.jpg" srcset="img/thumb/gate-car.jpg 720w, img/gate-car.jpg 933w" sizes="(max-width:900px) min(520px,100vw), 45vw" loading="lazy" decoding="async" alt="The Pathfinder Elite gate, flags and signboard on Ediba Lane, Calabar">
+        <img class="inset" src="img/swings-pair.jpg" srcset="img/thumb/swings-pair.jpg 720w, img/swings-pair.jpg 1400w" sizes="(max-width:900px) 280px, 26vw" loading="lazy" decoding="async" alt="Two pupils at the school swings">
         <span class="tape" aria-hidden="true"></span>
       </div>
       <div class="about-copy">
@@ -318,8 +344,8 @@ footer .motto span{color:var(--sun)}
         <p>Painted walls, a sandy playground and teachers who know every child by name. At Pathfinder Elite, children build strong foundations in reading, numbers and good character, with plenty of time to play.</p>
         <p class="motto"><span>Motto:</span>Determination Personified</p>
         <div class="vm">
-          <div class="v"><h4>Our Vision</h4><p>To build a school that will stand the test of time by raising determined learners of character and excellence.</p></div>
-          <div class="m"><h4>Our Mission</h4><p>Raising determined, disciplined and God-fearing learners that will make a positive impact in our society.</p></div>
+          <div class="v"><h3>Our Vision</h3><p>To build a school that will stand the test of time by raising determined learners of character and excellence.</p></div>
+          <div class="m"><h3>Our Mission</h3><p>Raising determined, disciplined and God-fearing learners that will make a positive impact in our society.</p></div>
         </div>
       </div>
     </div>
@@ -355,18 +381,18 @@ footer .motto span{color:var(--sun)}
           <li><i style="background:#ece6ff"><svg viewBox="0 0 24 24" stroke="#5a3fd0"><circle cx="8.5" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3 19c0-3 2.5-5.5 5.5-5.5S14 16 14 19M14.5 14c2.8 0 5 1.8 5.5 5"/></svg></i><div><b>Social clubs</b><span>Clubs that build friendships, teamwork and talents.</span></div></li>
         </ul>
       </div>
-      <div class="svc-photo"><img src="img/garden-mural.jpg" alt="The school's garden of painted tyres beside a mural wall"></div>
+      <div class="svc-photo"><img src="img/garden-mural.jpg" srcset="img/thumb/garden-mural.jpg 720w, img/garden-mural.jpg 1400w" sizes="(max-width:900px) 100vw, 45vw" loading="lazy" decoding="async" alt="The school's garden of painted tyres beside a mural wall"></div>
     </div>
   </section>
 
   <div class="cta">
-    <img src="img/seesaw-swings-3.jpg" alt="" loading="lazy">
+    <img src="img/seesaw-swings-3.jpg" srcset="img/thumb/seesaw-swings-3.jpg 720w, img/seesaw-swings-3.jpg 1400w" sizes="100vw" alt="" loading="lazy" decoding="async">
     <div class="wrap">
       <div>
         <h2>There's a place on the swings for your child.</h2>
-        <p>Call or WhatsApp +234 803 348 3918. Registration is ongoing.</p>
+        <p>Call or WhatsApp <a href="tel:+2348033483918">+234 803 348 3918</a>. Registration is ongoing.</p>
       </div>
-      <a class="btn btn-sun" href="#contact">Enrol now</a>
+      <a class="btn btn-sun" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chat on WhatsApp</a>
     </div>
   </div>
   <div class="curb" aria-hidden="true"></div>
@@ -398,17 +424,17 @@ footer .motto span{color:var(--sun)}
       <div>
         <div class="head" style="margin-bottom:0">
           <h2>Come and see the school</h2>
-          <p>Visit us on Ediba Lane, call, or send an enquiry and we'll get back to you.</p>
+          <p>Visit us on Ediba Lane, call the Principal, or send your child's details on WhatsApp.</p>
         </div>
         <ul class="contact-list">
           <li><i style="background:var(--red)"><svg><use href="#i-pin"/></svg></i><div><b>Address</b><span>#9 Ediba Lane, off Ediba Road, Calabar Municipality, Cross River State</span></div></li>
-          <li><i style="background:var(--sign-cyan)"><svg><use href="#i-phone"/></svg></i><div><b>Phone &amp; WhatsApp (Principal)</b><span>+234 803 348 3918</span> · <a href="https://wa.me/2348033483918" target="_blank" rel="noopener">Chat on WhatsApp</a></div></li>
-          <li><i style="background:var(--sign-teal)"><svg><use href="#i-mail"/></svg></i><div><b>Email</b><span>pathfinderinternational@gmail.com</span></div></li>
+          <li><i style="background:var(--sign-cyan)"><svg><use href="#i-phone"/></svg></i><div><b>Phone &amp; WhatsApp (Principal)</b><a href="tel:+2348033483918">+234 803 348 3918</a> · <a href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">Chat on WhatsApp</a></div></li>
+          <li><i style="background:var(--sign-teal)"><svg><use href="#i-mail"/></svg></i><div><b>Email</b><a href="mailto:pathfinderinternational@gmail.com">pathfinderinternational@gmail.com</a></div></li>
         </ul>
       </div>
       <form class="enquiry" id="enquiry" novalidate>
         <h3>Admission enquiry</h3>
-        <p class="sub">Tell us about your child and we'll contact you.</p>
+        <p class="sub">Fill this in and WhatsApp opens with your message ready to send to the Principal.</p>
         <div class="field"><label for="pname">Parent or guardian name</label><input id="pname" name="pname" required autocomplete="name"></div>
         <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
         <div class="field"><label for="cname">Child's name</label><input id="cname" name="cname" required></div>
@@ -418,7 +444,7 @@ footer .motto span{color:var(--sun)}
           </select></div>
         <div class="field full"><label for="email">Email (optional)</label><input id="email" name="email" type="email" autocomplete="email"></div>
         <div class="field full"><label for="msg">Message (optional)</label><textarea id="msg" name="msg"></textarea></div>
-        <button class="btn btn-sun" type="submit">Send enquiry</button>
+        <button class="btn btn-sun" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Send on WhatsApp</button>
         <div class="form-note" id="formNote" role="status" hidden></div>
       </form>
     </div>
@@ -436,25 +462,37 @@ footer .motto span{color:var(--sun)}
       </div>
       <div><h4>Quick links</h4><ul><li><a href="#about">About us</a></li><li><a href="#classes">Classes</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li></ul></div>
       <div><h4>Classes</h4><ul><li>Creche</li><li>Reception</li><li>Nursery</li><li>Primary</li></ul></div>
-      <div><h4>Contact</h4><ul><li>#9 Ediba Lane, off Ediba Road, Calabar Municipality</li><li>Call or WhatsApp:<br>+234 803 348 3918</li><li style="overflow-wrap:anywhere">pathfinderinternational@gmail.com</li></ul></div>
+      <div><h4>Contact</h4><ul><li>#9 Ediba Lane, off Ediba Road, Calabar Municipality</li><li>Call or WhatsApp:<br><a href="tel:+2348033483918">+234 803 348 3918</a></li><li style="overflow-wrap:anywhere"><a href="mailto:pathfinderinternational@gmail.com">pathfinderinternational@gmail.com</a></li></ul></div>
     </div>
     <div class="copy">© 2026 Pathfinder Elite International Schools, Calabar.</div>
   </div>
 </footer>
 
+<nav class="callbar" aria-label="Contact the school">
+  <a class="btn btn-sun" href="tel:+2348033483918"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+  <a class="btn btn-navy" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+</nav>
+
 <script>
 (function(){
   var b=document.getElementById('burger'),m=document.getElementById('menu');
-  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});
-  m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  function setMenu(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}
+  b.addEventListener('click',function(){setMenu(!m.classList.contains('open'))});
+  m.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open')){setMenu(false);b.focus()}});
 
   // hero photos
   var sl=document.getElementById('slides'),imgs=sl.querySelectorAll('img'),dots=document.getElementById('dots'),cur=0,timer;
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  imgs.forEach(function(_,i){var d=document.createElement('button');d.setAttribute('aria-label','Show photo '+(i+1));d.addEventListener('click',function(){go(i);restart()});dots.appendChild(d)});
-  function go(i){imgs[cur].classList.remove('on');dots.children[cur].classList.remove('on');cur=(i+imgs.length)%imgs.length;imgs[cur].classList.add('on');dots.children[cur].classList.add('on')}
-  function restart(){clearInterval(timer);if(!reduce)timer=setInterval(function(){go(cur+1)},6500)}
-  imgs[0].classList.add('on');dots.children[0].classList.add('on');sl.classList.add('ready');restart();
+  var playing=!reduce,ICO_PAUSE='<path d="M7 5h3v14H7zM14 5h3v14h-3z"/>',ICO_PLAY='<path d="M8 5l11 7-11 7z"/>';
+  imgs.forEach(function(_,i){var d=document.createElement('button');d.setAttribute('aria-label','Show photo '+(i+1));d.addEventListener('click',function(){go(i);setPlaying(false)});dots.appendChild(d)});
+  var pb=document.createElement('button');pb.className='pause';dots.appendChild(pb);
+  pb.addEventListener('click',function(){setPlaying(!playing)});
+  function go(i){imgs[cur].classList.remove('on');dots.children[cur].classList.remove('on');dots.children[cur].removeAttribute('aria-current');cur=(i+imgs.length)%imgs.length;imgs[cur].classList.add('on');dots.children[cur].classList.add('on');dots.children[cur].setAttribute('aria-current','true')}
+  function setPlaying(on){playing=on;clearInterval(timer);if(on)timer=setInterval(function(){go(cur+1)},6500);pb.setAttribute('aria-label',on?'Pause slideshow':'Play slideshow');pb.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+(on?ICO_PAUSE:ICO_PLAY)+'</svg>'}
+  go(0);sl.classList.add('ready');setPlaying(playing);
+  // later slides load after the page, so the first view comes in quickly on mobile data
+  window.addEventListener('load',function(){imgs.forEach(function(im){if(im.dataset.src)im.src=im.dataset.src})});
 
   // gallery lightbox
   var ico={x:'<path d="M6 6l12 12M18 6L6 18"/>',l:'<path d="M15 5l-7 7 7 7"/>',r:'<path d="M9 5l7 7-7 7"/>'};
@@ -466,10 +504,14 @@ footer .motto span{color:var(--sun)}
     lb.innerHTML='<img alt=""><button class="lb-btn lb-close" aria-label="Close">'+svg(ico.x)+'</button><button class="lb-btn lb-prev" aria-label="Previous photo">'+svg(ico.l)+'</button><button class="lb-btn lb-next" aria-label="Next photo">'+svg(ico.r)+'</button>';
     document.body.appendChild(lb);show(i);lb.querySelector('.lb-close').focus();
     lb.addEventListener('click',function(e){var c=e.target.classList;if(e.target===lb||c.contains('lb-close'))close();else if(c.contains('lb-prev'))show(li-1);else if(c.contains('lb-next'))show(li+1)});
+    var x0=null;
+    lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+    lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>50)show(dx<0?li+1:li-1)});
   }
   function close(){if(lb){lb.remove();lb=null;figs[li].focus()}}
   figs.forEach(function(f,i){f.addEventListener('click',function(){open(i)});f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(i)}})});
-  document.addEventListener('keydown',function(e){if(!lb)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(li-1);if(e.key==='ArrowRight')show(li+1)});
+  document.addEventListener('keydown',function(e){if(!lb)return;if(e.key==='Escape')close();
+    if(e.key==='Tab'){var bs=lb.querySelectorAll('button'),first=bs[0],last=bs[bs.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}else if(!lb.contains(document.activeElement)){e.preventDefault();first.focus()}}if(e.key==='ArrowLeft')show(li-1);if(e.key==='ArrowRight')show(li+1)});
 
   // enquiry form
   var f=document.getElementById('enquiry'),note=document.getElementById('formNote'),req=['pname','phone','cname','section'];
@@ -478,7 +520,14 @@ footer .motto span{color:var(--sun)}
     var missing=req.filter(function(id){var el=document.getElementById(id),bad=!el.value.trim();el.setAttribute('aria-invalid',bad);return bad});
     note.hidden=false;
     if(missing.length){note.textContent='Please add your name, phone number, your child\'s name and the class you want.';document.getElementById(missing[0]).focus();return}
-    note.textContent='Thank you, '+document.getElementById('pname').value.trim()+'. Online enquiries are not connected yet, so please call or WhatsApp +234 803 348 3918 and we\'ll book your visit.';
+    var v=function(id){return document.getElementById(id).value.trim()};
+    var lines=['Hello, I would like to ask about admission at Pathfinder Elite.','Parent/guardian: '+v('pname'),'Phone: '+v('phone'),'Child: '+v('cname'),'Class: '+v('section')];
+    if(v('email'))lines.push('Email: '+v('email'));
+    if(v('msg'))lines.push('','Message: '+v('msg'));
+    var url='https://wa.me/2348033483918?text='+encodeURIComponent(lines.join('\n'));
+    note.textContent='Opening WhatsApp with your message. Press send in WhatsApp so it reaches the Principal. ';
+    var a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.textContent='Open WhatsApp again';note.appendChild(a);
+    var w=window.open(url,'_blank');if(w)w.opener=null;else location.href=url;
   });
   req.forEach(function(id){document.getElementById(id).addEventListener('input',function(){this.removeAttribute('aria-invalid')})});
 })();

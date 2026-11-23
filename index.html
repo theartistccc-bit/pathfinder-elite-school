@@ -270,6 +270,82 @@ main > section h2,main > section h3{font-family:var(--head);font-weight:800;lett
 .foot .copy{text-align:center;font-size:.85rem;color:#8796c4;margin:44px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
 @media (max-width:900px){.foot-in{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.foot-in{grid-template-columns:1fr}.util .hide-sm{display:none}.util .wrap{justify-content:center}}
+
+/* ---------- phone first: everything below tuned for a 360–430px screen ---------- */
+.mbar{display:none}
+@media (max-width:700px){
+  body{font-size:17px;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+  section{padding-block:56px}
+  .util{font-size:.8rem}.util .wrap{padding-block:7px;gap:2px 14px}
+  /* masthead: one label, big title, nav as one swipeable row */
+  .mast{padding-block:14px 10px}
+  .mast-top span:not(:last-child){display:none}
+  .mast-top{justify-content:center}
+  .mast h1{font-size:clamp(2.7rem,13vw,3.6rem);margin-block:10px 6px;line-height:.95}
+  .mast .dek{font-size:1rem;margin-bottom:12px;padding-inline:8px}
+  .mast-bottom{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;gap:0;padding-block:0;margin-inline:-18px;padding-inline:10px;-webkit-overflow-scrolling:touch}
+  .mast-bottom::-webkit-scrollbar{display:none}
+  .mast-bottom a{flex:none;padding:14px 12px;font-size:.72rem}
+  .sun{width:46vw;top:-6%;right:-14%}
+  .cloud.c1{transform:scale(.6);left:-6%;top:44%}.cloud.c2{display:none}
+  .fish{width:72px;top:58%}
+  /* intro */
+  .intro{padding-top:36px}
+  .h-hero{font-size:clamp(2.2rem,10vw,2.9rem);margin-block:14px 16px}
+  .intro h2 .hl svg{bottom:-10px;height:12px}
+  .hero p.lead{font-size:1.06rem}
+  .ctas{flex-direction:column;align-items:stretch;gap:12px;margin-top:24px}
+  .ctas .btn{justify-content:center;padding:16px 22px}
+  .trust{gap:8px 16px;margin-top:20px;font-size:.9rem}
+  .where{font-size:.95rem;align-items:flex-start}
+  .stage{display:none}
+  .stage .wa,.stage .sticker{display:none}
+  .reg{position:relative;left:0;top:0;width:100%;rotate:0deg;animation:none;padding:18px}
+  .tbl{grid-template-columns:1fr 1fr}
+  .tbl div{padding:9px 12px;font-size:.9rem}
+  .blob.b1{width:360px;height:360px;right:-160px;top:-80px}.blob.b2{display:none}
+  /* sections */
+  .head{margin-bottom:30px}
+  .head h2{font-size:clamp(2rem,8.6vw,2.6rem)}
+  .head p{font-size:1.02rem}
+  .classes-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .cls{min-height:0;padding:18px 16px 18px;border-radius:22px;gap:8px}
+  .cls .ico{width:40px;height:40px;border-radius:12px}.cls .ico svg{width:21px;height:21px}
+  .cls h3{font-size:1.25rem}
+  .cls p{font-size:.88rem;line-height:1.5}
+  .cls .more{font-size:.85rem;padding-block:12px 4px;display:inline-block}
+  .util a{padding-block:8px}
+  .cls::after{width:110px;height:110px;right:-40px;bottom:-50px}
+  .about .wrap{gap:36px}
+  .pics{padding:0 34px 44px 0}
+  .pics .p-main img{aspect-ratio:4/4.4}
+  .about-copy h2{font-size:clamp(2rem,8.6vw,2.6rem)}
+  .about-copy > p{font-size:1.02rem}
+  .vm{grid-template-columns:1fr;gap:10px}
+  .vm div{padding:18px}
+  .svc-grid{grid-template-columns:1fr;gap:10px}
+  .svc{grid-template-columns:44px 1fr;column-gap:14px;row-gap:2px;padding:16px;border-radius:20px;align-items:center}
+  .svc i{grid-row:span 2;width:44px;height:44px}
+  .svc b{font-size:1rem}.svc span{font-size:.9rem}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:130px;gap:10px}
+  .gal figure{border-radius:18px}
+  .g-big{grid-column:1/-1;grid-row:span 2}.g-wide{grid-column:1/-1}
+  .cta{padding-block:20px 56px}
+  .cta-box{padding:30px 18px;border-radius:26px;gap:26px}
+  .cta h2{font-size:clamp(2rem,8.6vw,2.6rem)}
+  .enq{padding:20px;border-radius:20px}
+  .enq input,.enq select,.enq textarea{font-size:16px;padding:13px 14px}
+  .foot{padding-block:44px 20px}
+  .foot p a{display:inline-block;padding-block:6px}
+  .wa-float{display:none}
+  /* sticky action bar */
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;z-index:70;left:0;right:0;bottom:0;padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(22,48,122,.08)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:16px;font-family:var(--head);font-weight:700;font-size:.98rem;text-decoration:none}
+  .mbar svg{width:20px;height:20px}
+  .mbar .call{background:var(--tint-sky);color:var(--navy)}.mbar .call svg{fill:var(--navy)}
+  .mbar .chat{background:#25d366;color:#fff;box-shadow:0 4px 0 #1a9c4b}.mbar .chat svg{fill:#fff}
+}
+@media (max-width:360px){.classes-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -424,6 +500,10 @@ main > section h2,main > section h3{font-family:var(--head);font-weight:800;lett
   </section>
 </main>
 <a class="wa-float" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener" aria-label="Chat with the Principal on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2c.1.2.1.3 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<nav class="mbar" aria-label="Contact the school">
+  <a class="call" href="tel:+2348033483918"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg>Call</a>
+  <a class="chat" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2c.1.2.1.3 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp us</a>
+</nav>
 <footer class="foot">
   <div class="wrap foot-in">
     <div class="foot-brand"><img src="/img/logo.png" alt=""><div><b>Pathfinder Elite International Schools</b><span>Determination Personified</span></div></div>

@@ -77,7 +77,7 @@ header.top{display:flex;align-items:center;justify-content:space-between;gap:12p
 .ctas{display:flex;flex-wrap:wrap;gap:14px}
 .frame{position:relative;z-index:2;padding:14px;border-radius:48px;--c:var(--c-sky);rotate:2deg;animation:bob 8s ease-in-out infinite;animation-delay:-2s}
 .frame img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:36px}
-.fish{position:absolute;z-index:3;width:140px;top:-30px;left:-60px;filter:drop-shadow(0 14px 14px rgba(20,30,80,.18));animation:swim 6s ease-in-out infinite}
+.fish{position:absolute;z-index:3;width:140px;top:-30px;left:-60px;transform:scaleX(-1);filter:drop-shadow(0 14px 14px rgba(20,30,80,.18));animation:swim 6s ease-in-out infinite}
 @keyframes swim{0%,100%{translate:0 0;rotate:-4deg}50%{translate:30px -14px;rotate:4deg}}
 
 /* about */

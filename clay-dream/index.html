@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pathfinder Elite International Schools · Clay Dream</title>
+<meta name="description" content="Pathfinder Elite International Schools, Calabar. Creche, Reception, Nursery and Primary. Call or WhatsApp +234 803 348 3918.">
+<meta name="theme-color" content="#cfe8ff">
+<link rel="icon" href="/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;700;800&display=swap">
+<style>
+/* Clay Dream: the playground modelled in plasticine and set afloat in a dream sky.
+   Every object is puffy clay (inner highlight top-left, inner shade bottom-right, soft drop shadow):
+   the sun, the clouds, the mural goldfish, the swing seats that carry the class names, the frames around real photos.
+   Colours come from the campus, softened like modelling clay: wall sky, navy, curb red and yellow, mural green. */
+:root{
+  --sky:#cfe8ff; --sky2:#e9f4ff; --blush:#ffe7ee;
+  --navy:#22377f; --ink:#1d2552; --muted:#56608a;
+  --c-sky:#8fd0ff; --c-sun:#ffd54a; --c-red:#ff7b6e; --c-green:#7fd6a1; --c-lilac:#c7b8ff; --c-white:#ffffff; --c-navy:#3a52a8;
+  --display:"Baloo 2","Trebuchet MS",system-ui,sans-serif; --body:"Nunito",system-ui,sans-serif;
+  --shade:rgba(20,30,80,.16);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--body);font-weight:500;color:var(--ink);font-size:17.5px;line-height:1.6;
+  background:linear-gradient(180deg,var(--sky) 0%,var(--sky2) 45%,var(--blush) 80%,#fff6ea 100%);
+  padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+main{overflow-x:clip}
+::selection{background:var(--c-sun);color:var(--ink)}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:4px solid var(--c-red);outline-offset:4px;border-radius:18px}
+h1,h2,h3{font-family:var(--display);font-weight:800;margin:0;line-height:1.02;color:var(--navy);text-wrap:balance;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:max(18px,env(safe-area-inset-left,0px))}
+
+/* the clay recipe */
+.clay{--c:var(--c-white);background:var(--c);border-radius:36px;
+  box-shadow:inset 8px 10px 16px rgba(255,255,255,.65),inset -10px -14px 22px rgba(0,0,0,.12),0 22px 36px var(--shade),0 6px 10px rgba(20,30,80,.08)}
+.press{transition:transform .35s cubic-bezier(.3,1.6,.5,1),box-shadow .35s}
+.press:hover{transform:translateY(-4px) scale(1.02)}
+.press:active{transform:translateY(2px) scale(.98);box-shadow:inset 6px 8px 14px rgba(255,255,255,.5),inset -6px -8px 16px rgba(0,0,0,.16),0 8px 14px var(--shade)}
+
+.opts{position:relative;z-index:20;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:8px 16px;font-size:.8rem;font-weight:700;background:var(--navy);color:#dfe6ff}
+.opts a{color:#fff;text-decoration:none;padding:3px 10px;border-radius:99px}
+.opts a[aria-current]{background:var(--c-sun);color:var(--ink)}
+
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;padding:8px 18px 8px 8px;border-radius:99px}
+.brand img{width:48px;height:48px;border-radius:50%}
+.brand b{font-family:var(--display);font-size:1.2rem;color:var(--navy);line-height:1}
+.brand small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.08rem;text-decoration:none;padding:14px 26px;border-radius:99px;color:var(--ink)}
+.btn-sun{--c:var(--c-sun)}
+.btn-white{--c:var(--c-white)}
+.btn-green{--c:var(--c-green)}
+
+/* hero */
+.hero{position:relative;padding-block:30px 120px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.sun{position:absolute;z-index:3;width:120px;aspect-ratio:1;border-radius:50%;left:47%;top:-34px;--c:var(--c-sun);animation:bob 7s ease-in-out infinite}
+.sun::after{content:"";position:absolute;left:30%;top:42%;width:40%;height:18%;border-bottom:8px solid #c98a00;border-radius:0 0 60px 60px;opacity:.55}
+.cloud{position:absolute;width:150px;height:56px;border-radius:99px;--c:var(--c-white);animation:bob 9s ease-in-out infinite}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%;box-shadow:inset 6px 8px 12px rgba(255,255,255,.7),inset -6px -6px 12px rgba(0,0,0,.06)}
+.cloud::before{width:70px;height:70px;left:22px;top:-36px}.cloud::after{width:54px;height:54px;left:76px;top:-24px}
+.cl1{left:-2%;top:6%}.cl2{left:30%;bottom:-50px;animation-delay:-4s;transform:scale(.8)}
+@keyframes bob{50%{translate:0 -14px}}
+.plaque{position:relative;z-index:2;padding:40px 38px 38px;display:grid;gap:20px;border-radius:44px}
+.hero h1{font-size:clamp(2.6rem,6.2vw,4.8rem)}
+.hero h1 em{font-style:normal;color:#e2574a}
+.hero p{color:var(--muted);font-size:1.12rem;max-width:44ch}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--display);font-weight:700;font-size:.98rem;padding:8px 16px;border-radius:99px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.frame{position:relative;z-index:2;padding:14px;border-radius:48px;--c:var(--c-sky);rotate:2deg;animation:bob 8s ease-in-out infinite;animation-delay:-2s}
+.frame img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:36px}
+.fish{position:absolute;z-index:3;width:140px;top:-30px;left:-60px;filter:drop-shadow(0 14px 14px rgba(20,30,80,.18));animation:swim 6s ease-in-out infinite}
+@keyframes swim{0%,100%{translate:0 0;rotate:-4deg}50%{translate:30px -14px;rotate:4deg}}
+
+/* about */
+section{padding-block:80px}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.arch{padding:14px;border-radius:999px 999px 46px 46px;--c:var(--c-navy);max-width:440px;justify-self:center;width:100%}
+.arch img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 34px 34px}
+.about h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.about-copy{display:grid;gap:20px}
+.about-copy > p{color:var(--muted);font-size:1.08rem;max-width:52ch}
+.pillows{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pillow{padding:24px;border-radius:32px}
+.pillow h3{font-size:1.35rem;margin-bottom:6px}
+.pillow p{font-size:.98rem}
+.motto{justify-self:start;font-family:var(--display);font-weight:800;font-size:clamp(1.3rem,2.6vw,1.7rem);padding:12px 24px;border-radius:99px;--c:var(--c-red);color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.12)}
+
+/* classes on clay swings */
+.swings h2{text-align:center;font-size:clamp(2.2rem,5vw,3.6rem)}
+.swings .lead{text-align:center;color:var(--muted);max-width:46ch;margin:14px auto 0}
+.beam{height:26px;border-radius:99px;margin-top:40px;--c:var(--c-sun)}
+.rack{list-style:none;margin:0;padding:0 4%;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.seat{display:grid;justify-items:center;animation:sway 5s ease-in-out infinite;transform-origin:50% 0}
+.seat:nth-child(2){animation-delay:-1.3s}.seat:nth-child(3){animation-delay:-2.6s}.seat:nth-child(4){animation-delay:-3.9s}
+@keyframes sway{0%,100%{rotate:-3deg}50%{rotate:3deg}}
+.ropes{width:66%;height:140px;display:flex;justify-content:space-between}
+.ropes i{width:10px;border-radius:99px;background:linear-gradient(90deg,#b88566,#8a5a40);box-shadow:inset 2px 0 2px rgba(255,255,255,.4)}
+.board{width:100%;padding:24px 20px 26px;text-align:center;display:grid;gap:8px;border-radius:30px}
+.board h3{font-size:clamp(1.5rem,2.4vw,1.9rem)}
+.board p{font-size:.95rem;color:var(--ink)}
+.s1 .board{--c:var(--c-red)}.s1 h3,.s1 p{color:#fff}
+.s2 .board{--c:var(--c-green)}
+.s3 .board{--c:var(--c-sun)}
+.s4 .board{--c:var(--c-navy)}.s4 h3,.s4 p{color:#fff}
+
+/* services: clay pebbles with modelled icons */
+.pebbles h2{font-size:clamp(2.2rem,5vw,3.4rem);max-width:18ch}
+.pebble-row{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-top:40px}
+.pebble{padding:26px 18px 24px;text-align:center;display:grid;gap:12px;justify-items:center;border-radius:44% 56% 50% 50%/48% 46% 54% 52%;min-height:220px;align-content:center}
+.pebble:nth-child(even){border-radius:56% 44% 52% 48%/52% 54% 46% 48%;translate:0 26px}
+.ico{width:64px;height:64px;border-radius:22px;display:grid;place-items:center}
+.ico svg{width:34px;height:34px}
+.pebble b{font-family:var(--display);font-size:1.15rem;color:var(--navy);line-height:1.15}
+.pebble span{font-size:.9rem;color:var(--muted)}
+
+/* gallery: photos pressed into clay */
+.gallery h2{text-align:center;font-size:clamp(2.2rem,5vw,3.4rem)}
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:130px;gap:22px;margin-top:44px}
+.tile{padding:10px;border-radius:34px}
+.tile img{width:100%;height:100%;object-fit:cover;border-radius:26px}
+.t1{grid-column:1/4;grid-row:span 3;--c:var(--c-sun);rotate:-1.5deg}
+.t2{grid-column:4/7;grid-row:span 2;--c:var(--c-green)}
+.t3{grid-column:4/6;grid-row:span 2;--c:var(--c-lilac);rotate:2deg}
+.t4{grid-column:6/7;grid-row:span 2;--c:var(--c-red)}
+.t5{grid-column:1/3;grid-row:span 2;--c:var(--c-sky);border-radius:50%}.t5 img{border-radius:50%}
+.t6{grid-column:3/7;grid-row:span 2;--c:var(--c-white);rotate:-1deg}
+
+/* contact */
+.hello{padding-block:90px}
+.hello .wrap > .clay{padding:46px 34px;text-align:center;display:grid;gap:18px;justify-items:center;border-radius:56px;--c:var(--c-white)}
+.hello h2{font-size:clamp(2.2rem,5.6vw,4rem)}
+.hello p{color:var(--muted);max-width:44ch}
+.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:6px}
+.facts span{padding:10px 18px;border-radius:99px;font-weight:700;font-size:.95rem;overflow-wrap:anywhere;--c:var(--sky2)}
+footer{text-align:center;padding:10px 18px calc(30px + env(safe-area-inset-bottom,0px));font-size:.85rem;color:var(--muted);font-weight:700}
+
+@media (max-width:900px){
+  .hero .wrap,.about .wrap{grid-template-columns:1fr}
+  .frame{max-width:440px;justify-self:center;width:100%}
+  .sun{width:90px;top:-30px;left:auto;right:4%}
+  .rack{grid-template-columns:1fr 1fr;row-gap:10px}
+  .ropes{height:70px}
+  .pebble-row{grid-template-columns:1fr 1fr}
+  .pebble:nth-child(even){translate:0 0}
+  .tiles{grid-template-columns:1fr 1fr;grid-auto-rows:150px}
+  .tile{grid-column:auto!important;grid-row:span 1!important}
+  .t1{grid-column:1/-1!important;grid-row:span 2!important}
+}
+@media (max-width:520px){
+  .plaque{padding:28px 22px}
+  .pillows,.rack{grid-template-columns:1fr}
+  .ropes{height:44px}
+  .fish{width:100px;left:-10px;top:-40px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="opts" aria-label="Design options">Design options: <a href="/">Current</a><a href="/surreal/">Surreal</a><a href="/editorial/">Editorial</a><a href="/dream-journal/">Surreal + Editorial</a><a href="/clay-dream/" aria-current="page">Surreal + Clay</a><a href="/pixel/">Pixel art</a></nav>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand clay press" href="#top"><img src="/img/logo.png" alt=""><span><b>Pathfinder Elite</b><small>International Schools</small></span></a>
+    <a class="btn btn-sun clay press" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">WhatsApp</a>
+  </header>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="sun clay" aria-hidden="true"></div>
+      <div class="cloud clay cl1" aria-hidden="true"></div>
+      <div class="cloud clay cl2" aria-hidden="true"></div>
+      <div class="plaque clay">
+        <h1>A soft, safe world for <em>determined</em> little learners</h1>
+        <p>Pathfinder Elite International Schools, behind the blue gates on Ediba Lane, Calabar. Registration is ongoing.</p>
+        <div class="chips">
+          <span class="chip clay" style="--c:var(--c-red);color:#fff">Creche</span>
+          <span class="chip clay" style="--c:var(--c-green)">Reception</span>
+          <span class="chip clay" style="--c:var(--c-sun)">Nursery</span>
+          <span class="chip clay" style="--c:var(--c-navy);color:#fff">Primary</span>
+        </div>
+        <div class="ctas">
+          <a class="btn btn-sun clay press" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">Ask the Principal on WhatsApp</a>
+          <a class="btn btn-white clay press" href="tel:+2348033483918">Call us</a>
+        </div>
+      </div>
+      <div style="position:relative">
+        <svg class="fish" viewBox="0 0 120 80" aria-hidden="true">
+          <defs><radialGradient id="fg" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#ffe39a"/><stop offset=".55" stop-color="#ffb43c"/><stop offset="1" stop-color="#e8871a"/></radialGradient></defs>
+          <path d="M10 40c16-28 58-32 80-10l22-16-5 26 5 26-22-16C68 72 26 68 10 40z" fill="url(#fg)"/>
+          <ellipse cx="44" cy="28" rx="14" ry="6" fill="#fff" opacity=".45"/>
+          <circle cx="30" cy="36" r="7" fill="#fff"/><circle cx="29" cy="36" r="3.6" fill="#22377f"/><circle cx="28" cy="34.5" r="1.2" fill="#fff"/>
+        </svg>
+        <figure class="frame clay" style="margin:0"><img src="/img/thumb/playground.jpg" alt="Pathfinder Elite pupils playing on the swings"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <figure class="arch clay" style="margin:0"><img src="/img/gate-car.jpg" alt="The Pathfinder Elite gate, flags and signboard on Ediba Lane"></figure>
+      <div class="about-copy">
+        <h2>Behind the blue gates, everything is soft at the edges</h2>
+        <p>Painted goldfish and a bee in glasses on the walls. A sandy playground of swings and see-saws. Teachers who know every child by name, from their first day in Creche to their last day in Primary.</p>
+        <span class="motto clay">Determination Personified</span>
+        <div class="pillows">
+          <div class="pillow clay" style="--c:var(--c-white)"><h3>Our Vision</h3><p>To build a school that will stand the test of time by raising determined learners of character and excellence.</p></div>
+          <div class="pillow clay" style="--c:#fff3c9"><h3>Our Mission</h3><p>Raising determined, disciplined and God-fearing learners that will make a positive impact in our society.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="swings" id="classes">
+    <div class="wrap">
+      <h2>Four seats on one swing</h2>
+      <p class="lead">Registration is ongoing into every section, and children move up with the same faces and routines.</p>
+      <div class="beam clay" aria-hidden="true"></div>
+      <ol class="rack">
+        <li class="seat s1"><div class="ropes" aria-hidden="true"><i></i><i></i></div><div class="board clay"><h3>Creche</h3><p>Loving care, gentle routines and sensory play.</p></div></li>
+        <li class="seat s2"><div class="ropes" aria-hidden="true"><i></i><i></i></div><div class="board clay"><h3>Reception</h3><p>Songs, shapes and first letters in the classroom.</p></div></li>
+        <li class="seat s3"><div class="ropes" aria-hidden="true"><i></i><i></i></div><div class="board clay"><h3>Nursery</h3><p>Jolly Phonics, early numbers, art and music.</p></div></li>
+        <li class="seat s4"><div class="ropes" aria-hidden="true"><i></i><i></i></div><div class="board clay"><h3>Primary</h3><p>English, maths and science, with discipline and care.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="pebbles" id="services">
+    <div class="wrap">
+      <h2>Little extras, squeezed into every day</h2>
+      <div class="pebble-row">
+        <div class="pebble clay" style="--c:#ffffff"><span class="ico clay" style="--c:var(--c-red)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2.5-1 5.5-1 8 .5 2.5-1.5 5.5-1.5 8-.5v13c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13"/></svg></span><b>Jolly Phonics</b><span>Reading through sounds and actions</span></div>
+        <div class="pebble clay" style="--c:#ffffff"><span class="ico clay" style="--c:var(--c-sun)"><svg viewBox="0 0 24 24" fill="none" stroke="#22377f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></span><b>Dedicated staff</b><span>Every child’s progress, watched</span></div>
+        <div class="pebble clay" style="--c:#ffffff"><span class="ico clay" style="--c:var(--c-sky)"><svg viewBox="0 0 24 24" fill="none" stroke="#22377f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="11" rx="3"/><path d="M3 11h18M8 16v2M16 16v2"/></svg></span><b>School bus</b><span>Safe rides to and from school</span></div>
+        <div class="pebble clay" style="--c:#ffffff"><span class="ico clay" style="--c:var(--c-green)"><svg viewBox="0 0 24 24" fill="none" stroke="#22377f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6v9H4z"/><path d="M10 20v-5h4v5"/></svg></span><b>After school care</b><span>Supervised until you arrive</span></div>
+        <div class="pebble clay" style="--c:#ffffff"><span class="ico clay" style="--c:var(--c-lilac)"><svg viewBox="0 0 24 24" fill="none" stroke="#22377f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3 19c0-3 2.5-5.5 5.5-5.5S14 16 14 19M14.5 14c2.8 0 5 1.8 5.5 5"/></svg></span><b>Social clubs</b><span>Friendships, teamwork, talents</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <h2>Break time, pressed into clay</h2>
+      <div class="tiles">
+        <figure class="tile clay t1" style="margin:0"><img src="/img/thumb/seesaw-swings-2.jpg" alt="Pupils on the see-saw and swings" loading="lazy"></figure>
+        <figure class="tile clay t2" style="margin:0"><img src="/img/thumb/garden-mural.jpg" alt="Painted tyre garden and mural wall" loading="lazy"></figure>
+        <figure class="tile clay t3" style="margin:0"><img src="/img/thumb/swings-pair-2.jpg" alt="A boy and girl on the swings" loading="lazy"></figure>
+        <figure class="tile clay t4" style="margin:0"><img src="/img/thumb/swings-girls.jpg" alt="Two girls at the swings" loading="lazy"></figure>
+        <figure class="tile clay t5" style="margin:0"><img src="/img/thumb/swings-boys.jpg" alt="Boys swinging at break time" loading="lazy"></figure>
+        <figure class="tile clay t6" style="margin:0"><img src="/img/thumb/street-view.jpg" alt="The school wall and signboard seen from Ediba Lane" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="hello" id="contact">
+    <div class="wrap">
+      <div class="clay">
+        <h2>Come and squeeze in a visit</h2>
+        <p>Ask the Principal anything on WhatsApp, or come to the blue gates on Ediba Lane and see the school.</p>
+        <div class="ctas" style="justify-content:center">
+          <a class="btn btn-green clay press" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">WhatsApp +234 803 348 3918</a>
+          <a class="btn btn-sun clay press" href="tel:+2348033483918">Call the Principal</a>
+        </div>
+        <div class="facts"><span class="clay">#9 Ediba Lane, off Ediba Road, Calabar Municipality</span><span class="clay">pathfinderinternational@gmail.com</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>© 2026 Pathfinder Elite International Schools, Calabar · Determination Personified</footer>
+</body>
+</html>

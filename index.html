@@ -3,537 +3,454 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Pathfinder Elite International Schools, #9 Ediba Lane, off Ediba Road, Calabar. Creche, Reception, Nursery and Primary. Registration is ongoing. Call or WhatsApp +234 803 348 3918.">
+<title>Pathfinder Elite International Schools, Calabar</title>
+<meta name="description" content="Pathfinder Elite International Schools, #9 Ediba Lane, off Ediba Road, Calabar. Creche, Reception, Nursery and Primary. Admissions open. Call or WhatsApp the Principal on +234 803 348 3918.">
 <meta property="og:title" content="Pathfinder Elite International Schools, Calabar">
-<meta property="og:description" content="Creche, Reception, Nursery and Primary. Registration is ongoing. Motto: Determination Personified.">
-<meta property="og:image" content="https://pathfinder-elite-schools.vercel.app/img/playground.jpg">
-<meta name="theme-color" content="#16307a">
+<meta property="og:description" content="Strong foundations. Good character. A school your child will love. Creche to Primary on Ediba Lane, Calabar.">
+<meta property="og:image" content="/img/playground.jpg">
+<meta name="theme-color" content="#bfe3ff">
 <link rel="icon" href="/img/logo.png">
-<title>Pathfinder Elite International Schools</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Dancing+Script:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
 <style>
-/* Layout: the school's own visual world. Painted playground-curb stripes as dividers, billboard-style class names, the motto in the billboard's script, scrapbook photo placement. Colours from the walls (navy, sky), the curb (red, yellow) and the signboard lettering. */
+/* Dream Journal: a magazine feature printed on the sky.
+   Editorial bones (masthead, lead story, drop cap, pull quote, contents, captioned photo essay, admissions notice)
+   carried by surreal weather: a dawn gradient, the mural goldfish swimming through the masthead, photos floating in arches,
+   classes hanging from swing chains, and the admissions notice under a night sky with the sun going down. */
 :root{
-  --navy:#16307a;
-  --navy-deep:#0f2257;
-  --sky:#5bb8ec;
-  --sky-pale:#e8f5fd;
-  --sun:#ffcf26;
-  --red:#e8423b;
-  /* curb red darkened for text on white (5.6:1) */
-  --red-text:#c42d2d;
-  --ink:#283152;
-  --muted:#535d7e;
-  --paper:#ffffff;
-  --cream:#fffaf0;
-  /* signboard lettering, darkened just enough to pass contrast on white */
-  --sign-cyan:#0b86a8;
-  --sign-teal:#0c8f80;
-  --sign-pink:#d1306a;
-  --sign-blue:#2a3fc4;
-  --display:"Fredoka","Baloo 2","Trebuchet MS",system-ui,sans-serif;
-  --body:"Nunito","Segoe UI",system-ui,-apple-system,sans-serif;
-  --script:"Dancing Script","Brush Script MT",cursive;
+  --sky-top:#a9d8ff; --sky-mid:#d8edff; --dawn:#ffe6ef; --paper:#fffdf9;
+  --ink:#111a3a; --navy:#16307a; --muted:#4e5878; --rule:rgba(17,26,58,.16); --red:#d63a32; --sun:#ffcf26; --coral:#ff7a6b;
+  --display:"Instrument Serif","Times New Roman",serif; --text:"Newsreader",Georgia,serif; --label:"Inter Tight",system-ui,sans-serif;
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scrollbar-color:var(--navy) var(--sky-pale)}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65}
-::selection{background:var(--sun);color:var(--navy-deep)}
-h1,h2,h3,h4{font-family:var(--display);color:var(--navy);line-height:1.12;margin:0;text-wrap:balance;font-weight:700;letter-spacing:-.01em}
-p{margin:0}
-a{color:inherit;text-underline-offset:3px}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--text);font-size:19px;line-height:1.6;background:var(--paper);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+main{overflow-x:clip}
+::selection{background:var(--sun);color:var(--ink)}
 img{display:block;max-width:100%}
-input,textarea,select{caret-color:var(--red)}
-:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:8px}
-.wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-section{padding-block:104px;position:relative}
-.head{display:grid;gap:14px;max-width:640px;margin-bottom:48px}
-.head h2{font-size:clamp(2rem,4.4vw,3.1rem)}
-.head p{color:var(--muted);font-size:1.06rem;max-width:56ch}
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:1.05rem;padding:15px 30px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
-.btn:hover{transform:translateY(-2px)}
-.btn:active{transform:translateY(0)}
-.btn-sun{background:var(--sun);color:var(--navy-deep);box-shadow:0 6px 14px rgba(15,34,87,.18)}
-.btn-white{background:#fff;color:var(--navy)}
-.btn-white .i-wa{fill:#1f8a4c}
-.btn-navy{background:var(--navy);color:#fff}
-.btn svg{width:18px;height:18px;fill:currentColor;flex:none}
+a{color:inherit;text-underline-offset:4px;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:.98;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:max(18px,env(safe-area-inset-left,0px))}
+.label{font-family:var(--label);font-weight:600;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
 
-/* painted curb: the red / blue / yellow / white blocks around the playground */
-.curb{height:16px;background:repeating-linear-gradient(90deg,var(--red) 0 96px,#fff 96px 100px,var(--sky) 100px 196px,#fff 196px 200px,var(--sun) 200px 296px,#fff 296px 300px,var(--sky) 300px 396px,#fff 396px 400px)}
+.opts{position:relative;z-index:20;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:8px 16px;font-family:var(--label);font-size:.78rem;background:var(--ink);color:#c9d0e6}
+.opts a{color:#fff;text-decoration:none;padding:3px 10px;border-radius:99px}
+.opts a[aria-current]{background:var(--sun);color:var(--ink)}
 
-/* info bar */
-.topbar{background:var(--navy-deep);color:#d9e2ff;font-size:.88rem}
-.topbar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 26px;padding-block:10px}
-.topbar .grp{display:flex;flex-wrap:wrap;gap:6px 24px}
-.topbar span{display:inline-flex;align-items:center;gap:8px}
-.topbar svg{width:15px;height:15px;fill:var(--sun);flex:none}
-.topbar a{text-decoration:none}
-.topbar a:hover{color:#fff;text-decoration:underline}
-.topbar .mail{display:inline-flex;align-items:center;gap:8px}
+/* sky masthead */
+.sky{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 55%,var(--dawn) 85%,var(--paper) 100%)}
+.sun{position:absolute;width:min(46vw,440px);aspect-ratio:1;border-radius:50%;right:-6%;top:-18%;background:radial-gradient(circle at 40% 40%,#fff4c2,var(--sun) 60%,#ffb100);box-shadow:0 0 120px 30px rgba(255,207,38,.35)}
+.cloud{position:absolute;background:#fff;border-radius:999px;opacity:.9}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.c1{width:180px;height:50px;left:6%;top:30%}.c1::before{width:80px;height:80px;left:26px;top:-40px}.c1::after{width:60px;height:60px;left:92px;top:-28px}
+.c2{width:140px;height:40px;right:12%;bottom:22%}.c2::before{width:60px;height:60px;left:20px;top:-30px}.c2::after{width:48px;height:48px;left:70px;top:-20px}
+.fish{position:absolute;z-index:2;width:120px;top:44%;left:-160px;animation:swim 28s linear infinite;transform:scaleX(-1)}
+@keyframes swim{to{left:calc(100% + 160px)}}
+.mast{position:relative;z-index:3;padding-block:22px 18px}
+.mast-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--navy)}
+.mast h1{font-size:clamp(2.8rem,10vw,8rem);text-align:center;margin-block:22px 10px;letter-spacing:-.035em;color:var(--ink)}
+.mast h1 i{color:var(--red)}
+.mast .dek{text-align:center;font-style:italic;font-size:clamp(1.05rem,2vw,1.3rem);color:var(--navy);max-width:46ch;margin:0 auto 18px}
+.mast-bottom{display:flex;justify-content:center;gap:10px 26px;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:3px solid var(--ink);padding-block:10px}
+.mast-bottom a{text-decoration:none}
+.mast-bottom a:hover{color:var(--red)}
 
-.socials{display:inline-flex;gap:8px;align-items:center}
-.soc{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);transition:background .2s}
-.soc svg{width:15px;height:15px;fill:#fff}
-.soc:hover{background:var(--sun)}.soc:hover svg{fill:var(--navy-deep)}
-.socials-lg .soc{width:42px;height:42px}.socials-lg .soc svg{width:20px;height:20px}
-/* menu */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:#fff}
-header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:#fff;border-bottom:1px solid #e3e9f6}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo-mark{width:58px;height:58px;flex:none;border-radius:50%;background:#fff}
-.logo-text{display:grid;line-height:1.05}
-.logo-text strong{font-family:var(--display);font-size:1.35rem;color:var(--navy);font-weight:700}
-.logo-text small{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--red-text);font-weight:800}
-.menu{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0}
-.menu a{display:block;text-decoration:none;font-family:var(--display);font-weight:600;font-size:1.02rem;padding:10px 14px;border-radius:999px;color:var(--navy)}
-.menu a:hover{color:var(--red-text)}
-.menu .btn:hover{color:var(--navy-deep)}
-.menu .btn{margin-left:10px;padding:12px 24px;color:var(--navy-deep)}
-.burger{display:none;background:var(--sun);border:0;width:48px;height:48px;border-radius:50%;cursor:pointer;align-items:center;justify-content:center}
-.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2.5px;background:var(--navy);border-radius:2px;position:relative}
-.burger span::before,.burger span::after{content:"";position:absolute;left:0}
-.burger span::before{top:-7px}.burger span::after{top:7px}
-.burger span,.burger span::before,.burger span::after{transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s}
-.burger[aria-expanded="true"] span{background:transparent}
-.burger[aria-expanded="true"] span::before{transform:translateY(7px) rotate(45deg)}
-.burger[aria-expanded="true"] span::after{transform:translateY(-7px) rotate(-45deg)}
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(245,249,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{width:48px;height:48px;border-radius:15px;background:#fff;display:grid;place-items:center;box-shadow:0 4px 0 #d6e3f7,0 10px 20px rgba(22,48,122,.1)}
+.brand img{width:38px;height:38px;border-radius:50%}
+.brand b{font-family:var(--head);font-weight:800;font-size:1.2rem;letter-spacing:-.03em;color:var(--navy)}
+.links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.links a{text-decoration:none;font-weight:500;color:var(--muted)}
+.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;font-size:1rem;letter-spacing:-.01em;text-decoration:none;padding:15px 26px;border-radius:99px;transition:transform .2s,box-shadow .2s}
+.btn svg{width:16px;height:16px}
+.btn-main{color:#fff;background:linear-gradient(135deg,var(--red),#f0702f);box-shadow:0 5px 0 var(--red-deep),0 14px 26px rgba(229,72,61,.28)}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--red-deep),0 18px 30px rgba(229,72,61,.32)}
+.btn-main:active{transform:translateY(4px);box-shadow:0 1px 0 var(--red-deep),0 6px 12px rgba(229,72,61,.25)}
+.btn-soft{color:var(--navy);background:#fff;box-shadow:inset 0 0 0 1.5px #cfdcf2,0 5px 0 #dbe5f5}
+.btn-soft:hover{transform:translateY(-2px)}
 
 /* hero */
-.hero{position:relative;color:#fff;overflow:hidden;background:var(--navy-deep);padding:0}
-.slides{position:absolute;inset:0}
-.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:0;transition:opacity 1.4s cubic-bezier(.2,.8,.2,1),transform 8s ease-out;transform:scale(1.05)}
-.slides img:first-child{opacity:1}
-.slides.ready img{opacity:0}
-.slides.ready img.on{opacity:1;transform:scale(1)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,34,87,.9) 0%,rgba(15,34,87,.66) 46%,rgba(15,34,87,.08) 82%)}
-.hero .wrap{position:relative;z-index:2;padding-block:112px 132px}
-.hero-copy{max-width:620px;display:grid;gap:22px;justify-items:start}
-.hero h1{color:#fff;font-size:clamp(2.6rem,6vw,4.6rem)}
-.hero h1 em{font-style:normal;color:var(--sun)}
-.hero p{font-size:1.15rem;color:#e4ebff;max-width:50ch}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px}
-.reg{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-weight:700;color:#dfe7ff;font-size:.95rem;margin-top:6px}
-.reg b{color:var(--sun);font-weight:800}
-.dots{position:absolute;z-index:4;right:max(8px,env(safe-area-inset-right,0px));bottom:22px;display:flex;align-items:center}
-.dots button{position:relative;width:26px;height:44px;border:0;background:none;cursor:pointer;padding:0;transition:width .3s}
-.dots button::before{content:"";position:absolute;left:7px;right:7px;top:16px;height:12px;border-radius:999px;background:rgba(255,255,255,.6);transition:background .3s}
-.dots button.on{width:48px}
-.dots button.on::before{background:var(--sun)}
-.dots .pause{width:44px;margin-left:4px}
-.dots .pause::before{display:none}
-.dots .pause svg{width:30px;height:30px;margin:auto;display:block;border-radius:50%;background:rgba(15,34,87,.55);padding:8px;fill:#fff}
+.hero{position:relative;padding-block:80px 110px;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);z-index:0}
+.b1{width:620px;height:620px;right:-140px;top:-120px;background:radial-gradient(circle at 40% 40%,#dbeeff,#eef6ff 60%,transparent 70%)}
+.b2{width:420px;height:420px;right:120px;top:260px;background:radial-gradient(circle,#fff1c9,transparent 65%)}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.12fr .88fr;gap:50px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+.eyebrow i{width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px var(--tint-red)}
+.hero h1{font-size:clamp(2.8rem,6.6vw,5.4rem);margin-block:20px 22px}
+.hero h1 .hl{position:relative;display:inline-block;color:var(--red)}
+.hero h1 .hl svg{position:absolute;left:0;right:0;bottom:-14px;width:100%;height:18px}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:48ch}
+.ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:34px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:.95rem;color:var(--muted)}
+.trust span{display:inline-flex;align-items:center;gap:8px}
+.trust svg{width:18px;height:18px;flex:none}
+
+/* floating app cards */
+.stage{position:relative;min-height:640px}
+.card-app{position:absolute;background:#fff;border-radius:26px;box-shadow:0 2px 0 #e7eefa,0 30px 60px rgba(22,48,122,.18)}
+.reg{left:4%;top:0;width:92%;padding:22px 22px 18px;rotate:3deg;animation:float 8s ease-in-out infinite}
+@keyframes float{50%{translate:0 -12px}}
+.reg-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.reg-top .who{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:700;color:var(--ink);font-size:.98rem}
+.reg-top img{width:34px;height:34px;border-radius:10px;background:var(--tint-sky);padding:3px}
+.dots{display:flex;gap:5px}.dots i{width:8px;height:8px;border-radius:50%;background:#e3e9f6}.dots i:first-child{background:var(--sun)}
+.reg h3{font-size:1.35rem;letter-spacing:-.03em}
+.reg .sub{font-size:.88rem;color:var(--muted);margin-bottom:14px}
+.photo-in{border-radius:18px;overflow:hidden;margin-bottom:14px}
+.photo-in img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.tbl{display:grid;gap:8px}
+.tbl div{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:14px;padding:10px 14px;font-weight:500;font-size:.95rem}
+.tbl b{font-family:var(--head);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--green);background:#e5f7ee;padding:4px 10px;border-radius:99px}
+.wa{left:-8%;bottom:0;width:70%;background:var(--navy-deep);color:#fff;padding:16px 18px;rotate:-4deg;animation:float 7s ease-in-out infinite;animation-delay:-3s}
+.wa-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.wa-head i{width:32px;height:32px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:none}
+.wa-head i svg{width:17px;height:17px;fill:#fff}
+.wa-head b{font-family:var(--head);font-size:.92rem}
+.wa-head small{display:block;color:#9fb0dd;font-size:.75rem}
+.bubble{background:#1e3170;border-radius:14px 14px 14px 4px;padding:10px 12px;font-size:.9rem;color:#e7ecff}
+.sticker{position:absolute;right:-2%;top:-26px;width:92px;height:92px;border-radius:50%;background:var(--sun);display:grid;place-items:center;text-align:center;font-family:var(--head);font-weight:800;font-size:.78rem;line-height:1.1;color:var(--ink);rotate:12deg;box-shadow:0 5px 0 #d9a200,0 16px 26px rgba(255,180,0,.35);z-index:3}
+
+/* section shared */
+section{padding-block:100px;position:relative}
+.head{display:grid;gap:14px;max-width:700px;margin-bottom:50px}
+.head.center{text-align:center;margin-inline:auto;justify-items:center}
+.head h2{font-size:clamp(2.2rem,5vw,3.8rem)}
+.head p{font-size:1.15rem;color:var(--muted)}
+
+/* classes */
+.classes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cls{position:relative;overflow:hidden;border-radius:28px;padding:28px 26px 30px;display:grid;gap:12px;align-content:start;min-height:300px;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.cls:hover{transform:translateY(-6px)}
+.cls::after{content:"";position:absolute;right:-50px;bottom:-60px;width:170px;height:170px;border-radius:50%;background:var(--blob)}
+.cls .ico{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--chip)}
+.cls .ico svg{width:26px;height:26px;fill:none;stroke:var(--ink-c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cls h3{font-size:1.6rem;color:var(--ink-c)}
+.cls p{color:var(--muted-c);font-size:1rem;position:relative;z-index:1}
+.cls .more{position:relative;z-index:1;margin-top:auto;font-family:var(--head);font-weight:700;font-size:.92rem;color:var(--accent);text-decoration:none}
+.k1{background:var(--tint-sky);border:1.5px solid #d3e7fb;--chip:#fff;--ink-c:var(--ink);--muted-c:var(--muted);--blob:#d3e9fc;--accent:var(--navy)}
+.k2{background:var(--tint-red);border:1.5px solid #fbd6d1;--chip:#fff;--ink-c:var(--ink);--muted-c:var(--muted);--blob:#fdd7d1;--accent:var(--red-deep)}
+.k3{background:var(--navy);--chip:rgba(255,255,255,.1);--ink-c:#fff;--muted-c:#c7d1f2;--blob:rgba(255,255,255,.07);--accent:var(--sun)}
+.k4{background:var(--navy-deep);--chip:rgba(255,255,255,.1);--ink-c:#fff;--muted-c:#c7d1f2;--blob:rgba(79,178,239,.12);--accent:var(--sky)}
 
 /* about */
-.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
-.scrap{position:relative;padding:20px 48px 70px 10px}
-.scrap .main{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:10px solid #fff;box-shadow:0 18px 40px rgba(15,34,87,.18);transform:rotate(-2deg)}
-.scrap .inset{position:absolute;right:0;bottom:0;width:54%;aspect-ratio:3/2;object-fit:cover;border-radius:14px;border:8px solid #fff;box-shadow:0 16px 32px rgba(15,34,87,.2);transform:rotate(3deg)}
-.scrap .tape{position:absolute;width:110px;height:30px;background:rgba(255,207,38,.82);top:6px;left:38%;transform:rotate(-6deg);border-radius:3px}
+.about{background:linear-gradient(180deg,var(--bg),var(--bg2))}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.pics{position:relative;padding:0 60px 70px 0}
+.pics .p-main{border-radius:32px;overflow:hidden;box-shadow:0 30px 60px rgba(22,48,122,.2)}
+.pics .p-main img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.pics .p-small{position:absolute;right:0;bottom:0;width:52%;border-radius:24px;overflow:hidden;border:7px solid #fff;box-shadow:0 20px 40px rgba(22,48,122,.2);rotate:4deg}
+.pics .p-small img{width:100%;aspect-ratio:1;object-fit:cover}
 .about-copy{display:grid;gap:22px}
-.about-copy h2{font-size:clamp(2rem,4.4vw,3.1rem)}
-.about-copy > p:not(.motto){color:var(--muted);font-size:1.06rem;max-width:56ch}
-.motto{font-family:var(--script);font-weight:700;font-size:clamp(1.9rem,3.6vw,2.5rem);color:var(--sign-blue);line-height:1.1}
-.motto span{color:var(--sign-pink);font-size:.7em;margin-right:8px}
-.vm{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.vm div{border-radius:14px;padding:20px 22px;border:3px dashed rgba(22,48,122,.22)}
-.vm h3{font-size:1.3rem;margin-bottom:6px;color:var(--sign-pink)}
-.vm p{font-size:.96rem}
-.vm .v{background:#fff}
-.vm .m{background:#fff6cf}
-
-/* classes, set like the signboard */
-.classes{background:var(--sky-pale)}
-.classes .head h2{color:#fff;background:var(--sign-pink);display:inline-block;padding:6px 18px;border-radius:6px;font-size:clamp(1.5rem,3.2vw,2.2rem);justify-self:start}
-.board{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:20px;border:6px solid var(--navy);overflow:hidden}
-.level{padding:30px 26px 34px;display:grid;gap:12px;align-content:start;border-right:3px solid #e1e8f5}
-.level:last-child{border-right:0}
-.level h3{font-size:clamp(1.6rem,2.6vw,2.2rem);letter-spacing:.02em;text-transform:uppercase}
-.level p{color:var(--muted);font-size:.97rem}
-.l1 h3{color:var(--sign-cyan)}.l2 h3{color:var(--sign-teal)}.l3 h3{color:var(--sign-pink)}.l4 h3{color:var(--sign-blue)}
+.about-copy h2{font-size:clamp(2.2rem,4.8vw,3.6rem)}
+.about-copy > p{color:var(--muted);font-size:1.1rem;max-width:50ch}
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.vm div{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:22px}
+.vm h3{font-size:1.15rem;margin-bottom:6px;letter-spacing:-.02em}
+.vm p{font-size:.98rem;color:var(--muted)}
+.motto{display:inline-flex;align-items:center;gap:10px;justify-self:start;background:var(--tint-sun);border:1.5px solid #f6e29a;border-radius:99px;padding:10px 20px;font-family:var(--head);font-weight:800;color:var(--ink);letter-spacing:-.02em}
+.motto small{font-family:var(--body);font-weight:500;color:#8a6a00;letter-spacing:0}
 
 /* services */
-.svc .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
-.svc-list{list-style:none;margin:0;padding:0;display:grid;gap:4px}
-.svc-list li{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:14px 0;border-bottom:2px dashed #e1e8f5}
-.svc-list li:last-child{border-bottom:0}
-.svc-list i{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-style:normal}
-.svc-list i svg{width:26px;height:26px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.svc-list b{display:block;font-family:var(--display);font-weight:600;color:var(--navy);font-size:1.15rem}
-.svc-list span{color:var(--muted);font-size:.95rem;line-height:1.5}
-.svc-photo{position:relative;padding:0 18px 18px 0}
-.svc-photo img{border-radius:18px;width:100%;aspect-ratio:3/2;object-fit:cover;position:relative;z-index:1}
-.svc-photo::before{content:"";position:absolute;inset:18px 0 0 18px;border-radius:18px;background:var(--sun)}
-
-/* CTA band */
-.cta{color:#fff;padding-block:84px;overflow:hidden;position:relative;background:var(--red)}
-.cta > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.cta::before{content:"";position:absolute;inset:0;background:rgba(196,38,38,.88);z-index:1}
-.cta .wrap{position:relative;z-index:2;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px}
-.cta h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.6rem);max-width:620px}
-.cta p{color:#fff;margin-top:10px;font-weight:700;font-size:1.05rem}
+.svc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.svc{background:#fff;border:1.5px solid var(--line);border-radius:24px;padding:24px 20px;display:grid;gap:10px;align-content:start;transition:box-shadow .3s,transform .3s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(22,48,122,.1)}
+.svc i{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--t)}
+.svc i svg{width:23px;height:23px;fill:none;stroke:var(--s);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc b{font-family:var(--head);font-weight:700;font-size:1.06rem;letter-spacing:-.02em;color:var(--ink);line-height:1.25}
+.svc span{font-size:.94rem;color:var(--muted)}
 
 /* gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;grid-auto-flow:dense;gap:14px}
-.gallery-grid figure{margin:0;border-radius:16px;overflow:hidden;position:relative;cursor:zoom-in;background:var(--sky-pale)}
-.gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.gallery-grid figure:hover img{transform:scale(1.05)}
-.gallery-grid figure::after{content:"";position:absolute;right:14px;bottom:14px;width:42px;height:42px;border-radius:50%;background:var(--sun) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230f2257' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6'/%3E%3Cpath d='M15 15l5 5M10.5 8v5M8 10.5h5'/%3E%3C/svg%3E") center/22px no-repeat;opacity:0;transform:scale(.7);transition:.3s cubic-bezier(.2,.8,.2,1)}
-.gallery-grid figure:hover::after,.gallery-grid figure:focus-visible::after{opacity:1;transform:none}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:16px}
+.gal figure{margin:0;border-radius:24px;overflow:hidden}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.gal figure:hover img{transform:scale(1.05)}
+.g-big{grid-column:span 2;grid-row:span 2}
 .g-wide{grid-column:span 2}
-.g-tall{grid-row:span 2}
-.lightbox{position:fixed;inset:0;z-index:100;background:rgba(10,20,55,.94);display:grid;place-items:center;padding:max(70px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(70px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
-.lightbox img{max-width:min(1200px,100%);max-height:100%;border-radius:14px;object-fit:contain}
-.lb-btn{position:absolute;width:50px;height:50px;border-radius:50%;border:0;background:var(--sun);color:var(--navy-deep);cursor:pointer;display:grid;place-items:center}
-.lb-btn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
-.lb-close{top:calc(12px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px))}
-.lb-prev{left:calc(16px + env(safe-area-inset-left,0px));top:50%;transform:translateY(-50%)}
-.lb-next{right:calc(16px + env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%)}
 
-/* contact */
-.admit{background:var(--cream)}
-.admit .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-.contact-list{list-style:none;margin:28px 0 0;padding:0;display:grid;gap:18px}
-.contact-list li{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center}
-.contact-list i{width:48px;height:48px;border-radius:50%;display:grid;place-items:center}
-.contact-list i svg{width:21px;height:21px;fill:#fff}
-.contact-list b{display:block;font-family:var(--display);color:var(--navy);font-weight:600}
-.contact-list span,.contact-list a{color:var(--muted);font-size:.97rem;overflow-wrap:anywhere}
-.contact-list a{color:var(--navy);font-weight:700}
-.contact-list a:hover{color:var(--red-text)}
-form.enquiry{background:var(--navy);border-radius:22px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px;color:#fff}
-form.enquiry h3{grid-column:1/-1;color:#fff;font-size:1.7rem}
-form.enquiry p.sub{grid-column:1/-1;color:#cbd6ff;margin-top:-8px}
-.field{display:grid;gap:6px;min-width:0}
-.field.full{grid-column:1/-1}
-.field label{font-weight:700;font-size:.88rem;color:#dfe6ff}
-.field input,.field select,.field textarea{font:inherit;font-size:.98rem;padding:13px 16px;border-radius:12px;border:2px solid transparent;background:#fff;color:var(--ink);width:100%}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sun)}
-.field [aria-invalid="true"]{border-color:#ff8a84}
-.field textarea{min-height:96px;resize:vertical}
-form.enquiry .btn{grid-column:1/-1;justify-content:center}
-.form-note{grid-column:1/-1;background:rgba(255,207,38,.14);border:2px solid var(--sun);border-radius:12px;padding:14px 16px;font-weight:700}
+/* CTA */
+.cta{padding-block:40px 110px}
+.cta-box{position:relative;overflow:hidden;border-radius:36px;background:var(--navy-deep);color:#fff;padding:64px 56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.cta-box::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;right:-120px;top:-160px;background:radial-gradient(circle,rgba(79,178,239,.35),transparent 65%)}
+.cta-box::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;left:30%;bottom:-200px;background:radial-gradient(circle,rgba(255,201,40,.25),transparent 65%)}
+.cta-box > *{position:relative;z-index:1}
+.cta h2{color:#fff;font-size:clamp(2.2rem,5vw,3.8rem)}
+.cta p{color:#c7d1f2;margin-top:14px;font-size:1.1rem;max-width:44ch}
+.contact{display:grid;gap:12px}
+.contact .row{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:14px 18px}
+.contact small{display:block;color:#9fb0dd;font-size:.82rem}
+.contact b{font-family:var(--head);font-size:1.1rem;letter-spacing:-.01em;overflow-wrap:anywhere}
+.cta .ctas{margin-top:26px}
+.btn-sun{color:var(--ink);background:var(--sun);box-shadow:0 5px 0 #d9a200,0 14px 26px rgba(255,180,0,.25)}
+.btn-sun:hover{transform:translateY(-2px)}
+.btn-ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.5)}
+footer{padding:26px 18px calc(30px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.9rem;color:var(--muted)}
 
-/* footer */
-footer{background:var(--navy-deep);color:#c5cfee;padding-block:80px 28px}
-.foot{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:40px}
-footer h4{color:#fff;font-size:1.2rem;margin-bottom:18px}
-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-footer a{text-decoration:none}
-footer a:hover{color:var(--sun);text-decoration:underline}
-footer .logo-text strong{color:#fff}
-footer .motto{color:#fff;font-size:1.7rem}
-footer .motto span{color:var(--sun)}
-.foot p:not(.motto){font-size:.95rem}
-footer .logo-text small{color:#ff9b94}
-.copy{border-top:1px solid #2a3a78;margin-top:50px;padding-top:22px;font-size:.86rem}
-
-/* call bar: the two real admissions channels, in thumb reach on phones */
-.callbar{display:none}
-
-/* responsive */
-@media (max-width:1040px){
-  .board{grid-template-columns:1fr 1fr}
-  .level:nth-child(2){border-right:0}
-  .level:nth-child(-n+2){border-bottom:3px solid #e1e8f5}
-  .gallery-grid{grid-template-columns:repeat(2,1fr)}
-  .foot{grid-template-columns:1fr 1fr}
+@media (max-width:1000px){
+  .links{display:none}
+  .hero .wrap,.about .wrap,.cta-box{grid-template-columns:1fr}
+  .stage{min-height:620px;max-width:520px;width:100%;margin:20px auto 0}
+  .classes-grid{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .pics{max-width:480px;width:100%;margin:0 auto}
 }
-@media (max-width:900px){
-  .burger{display:inline-flex}
-  .menu{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:#fff;padding:12px max(16px,env(safe-area-inset-right,0px)) 18px max(16px,env(safe-area-inset-left,0px));box-shadow:0 18px 30px rgba(15,34,87,.12)}
-  .menu.open{display:flex}
-  .menu .btn{margin:8px 0 0;justify-content:center}
-  .about .wrap,.svc .wrap,.admit .wrap{grid-template-columns:1fr}
-  .scrap{max-width:520px;width:100%;margin:0 auto}
-  .hero::after{background:linear-gradient(180deg,rgba(15,34,87,.55),rgba(15,34,87,.88))}
-  .hero .wrap{padding-block:88px 110px}
-}
-@media (max-width:600px){
+@media (max-width:560px){
+  .nav .btn{padding:11px 16px;font-size:.9rem}
+  .brand b{font-size:1.05rem}
   section{padding-block:72px}
-  .board,.vm{grid-template-columns:1fr}
-  .level{border-right:0;border-bottom:3px solid #e1e8f5}
-  .level:last-child{border-bottom:0}
-  .gallery-grid{grid-auto-rows:160px}
-  form.enquiry{grid-template-columns:1fr;padding:24px}
-  .foot{grid-template-columns:1fr}
-  .topbar .hide-sm{display:none}
-  .scrap{padding:14px 24px 46px 4px}
-  .curb{height:12px}
-  .callbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:#fff;border-top:1px solid #e3e9f6;box-shadow:0 -8px 22px rgba(15,34,87,.1)}
-  .callbar .btn{justify-content:center;padding:13px 14px}
-  body{padding-bottom:76px}
+  .hero{padding-block:48px 80px}
+  .stage{min-height:600px}
+  .wa{left:-2%;width:84%}
+  .sticker{right:0;width:80px;height:80px;font-size:.7rem}
+  .classes-grid,.svc-grid,.vm{grid-template-columns:1fr}
+  .cls{min-height:0}
+  .g-big,.g-wide{grid-column:1/-1}
+  .cta-box{padding:42px 24px;border-radius:28px}
+  .strip{font-size:.8rem}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ---------- below the masthead: soft modern (same system as /soft/) ---------- */
+:root{--bg:#f5f9ff;--bg2:#fff8ef;--tint-sky:#e6f3ff;--tint-sun:#fff4cf;--tint-red:#ffe9e6;--navy-deep:#0d1a45;--line:#e3e9f6;--sky:#4fb2ef;--red2:#e5483d;--red-deep:#b9302a;--green:#2fb37a;
+  --head:"Plus Jakarta Sans",system-ui,sans-serif;--body:"DM Sans",system-ui,sans-serif}
+body{font-family:var(--body);font-size:18px;line-height:1.65;background:var(--bg)}
+.mast .dek{font-family:var(--text)}
+main > section h2,main > section h3{font-family:var(--head);font-weight:800;letter-spacing:-.04em;line-height:1.02}
+.h-hero{font-size:clamp(2.6rem,5.8vw,4.8rem);margin-block:20px 22px}
+.intro h2 .hl{position:relative;display:inline-block;color:var(--red2)}
+.intro h2 .hl svg{position:absolute;left:0;right:0;bottom:-14px;width:100%;height:18px}
+.intro{background:linear-gradient(180deg,#fffdf9 0%,var(--bg) 40%)}
+.enq{background:#fff;color:var(--ink);border-radius:26px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:14px;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.enq h3{grid-column:1/-1;font-size:1.5rem}
+.enq .sub{grid-column:1/-1;color:var(--muted);font-size:.98rem;margin-top:-6px}
+.enq .f{display:grid;gap:6px;min-width:0}
+.enq .full{grid-column:1/-1}
+.enq label{font-weight:700;font-size:.88rem;color:var(--ink)}
+.enq input,.enq select,.enq textarea{font:inherit;font-size:1rem;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.enq input:focus,.enq select:focus,.enq textarea:focus{outline:none;border-color:var(--sky);background:#fff}
+.enq [aria-invalid="true"]{border-color:var(--red2)}
+.enq textarea{min-height:84px;resize:vertical}
+.enq .btn{justify-content:center;border:0;cursor:pointer}
+.note{font-size:.95rem;font-weight:500;color:var(--navy);background:var(--tint-sky);border-radius:12px;padding:12px 14px}
+.cta-box{align-items:start}
+@media (max-width:560px){.enq{grid-template-columns:1fr;padding:22px}}
+/* ---------- polish ---------- */
+.util{background:var(--navy-deep);color:#dbe4ff;font-family:var(--body);font-size:.88rem}
+.util .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 22px;padding-block:9px}
+.util span,.util a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:inherit}
+.util a:hover{color:#fff;text-decoration:underline}
+.util svg{width:15px;height:15px;fill:var(--sun);flex:none}
+.util .grp{display:flex;flex-wrap:wrap;gap:6px 22px}
+.h-hero{font-size:clamp(2.4rem,5.2vw,4.4rem)}
+.where{display:flex;align-items:center;gap:8px;margin-top:18px;font-weight:500;color:var(--navy)}
+.where svg{width:18px;height:18px;fill:var(--red2);flex:none}
+.mast-bottom a{padding:6px 4px}
+.cls .more:hover{text-decoration:underline}
+.gal figure{position:relative}
+.wa-float{position:fixed;z-index:60;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 4px 0 #1a9c4b,0 14px 30px rgba(20,120,60,.35);transition:transform .2s}
+.wa-float:hover{transform:translateY(-3px)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+.foot{background:#0b1638;color:#c3cdee;padding-block:64px 26px;margin-top:10px}
+.foot-in{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+.foot-brand{display:flex;gap:14px;align-items:flex-start}
+.foot-brand img{width:54px;height:54px;border-radius:50%;background:#fff;flex:none}
+.foot-brand b{display:block;font-family:var(--head);font-weight:800;color:#fff;font-size:1.05rem;letter-spacing:-.02em;line-height:1.25}
+.foot-brand span{font-family:var(--display);font-style:italic;color:var(--sun);font-size:1.25rem}
+.foot h4{font-family:var(--head);font-weight:700;color:#fff;font-size:.95rem;margin:0 0 10px}
+.foot p{font-size:.95rem;line-height:1.7;overflow-wrap:anywhere}
+.foot a{text-decoration:none;color:inherit}.foot a:hover{color:#fff;text-decoration:underline}
+.foot .copy{text-align:center;font-size:.85rem;color:#8796c4;margin:44px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
+@media (max-width:900px){.foot-in{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.foot-in{grid-template-columns:1fr}.util .hide-sm{display:none}.util .wrap{justify-content:center}}
 </style>
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
 <body>
-<nav class="opts" aria-label="Design options" style="display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;align-items:center;padding:8px 16px;font:600 13px/1.4 system-ui,sans-serif;background:#0f2257;color:#d9e2ff">Design options: <a href="/" aria-current="page" style="color:#0f2257;background:#ffcf26;padding:3px 10px;border-radius:99px;text-decoration:none">Current</a><a href="/soft/" style="color:#fff;text-decoration:none;padding:3px 10px">Soft modern</a><a href="/surreal/" style="color:#fff;text-decoration:none;padding:3px 10px">Surreal</a><a href="/editorial/" style="color:#fff;text-decoration:none;padding:3px 10px">Editorial</a><a href="/dream-journal/" style="color:#fff;text-decoration:none;padding:3px 10px">Surreal + Editorial</a><a href="/clay-dream/" style="color:#fff;text-decoration:none;padding:3px 10px">Surreal + Clay</a><a href="/futuristic/" style="color:#fff;text-decoration:none;padding:3px 10px">Futuristic</a><a href="/pixel/" style="color:#fff;text-decoration:none;padding:3px 10px">Pixel art</a></nav>
+<div class="util"><div class="wrap">
+  <div class="grp"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>#9 Ediba Lane, off Ediba Road, Calabar</span><a class="hide-sm" href="mailto:pathfinderinternational@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.2l-8 5-8-5V6l8 5 8-5z"/></svg>pathfinderinternational@gmail.com</a></div>
+  <a href="tel:+2348033483918"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg>Call or WhatsApp +234 803 348 3918</a>
+</div></div>
 
-
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></symbol>
-  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 000-.4c0-.1-.6-1.4-.8-1.9s-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.3c0-.1-.2-.2-.5-.3z"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4.2l-8 5-8-5V6l8 5 8-5z"/></symbol>
-</svg>
-
-<div class="topbar">
-  <div class="wrap">
-    <div class="grp">
-      <span><svg><use href="#i-pin"/></svg>#9 Ediba Lane, off Ediba Road, Calabar Municipality</span>
-      <a class="mail hide-sm" href="mailto:pathfinderinternational@gmail.com"><svg><use href="#i-mail"/></svg>pathfinderinternational@gmail.com</a>
+<main>
+  <header class="sky">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="cloud c1" aria-hidden="true"></div><div class="cloud c2" aria-hidden="true"></div>
+    <svg class="fish" viewBox="0 0 120 70" aria-hidden="true"><path d="M8 35c18-26 58-30 82-8l22-16-6 24 6 24-22-16C66 65 26 61 8 35z" fill="#f5a623"/><path d="M40 12c10 2 18 8 22 16-10-3-20-3-30 0 2-7 4-12 8-16z" fill="#f08a1c"/><circle cx="28" cy="31" r="5" fill="#fff"/><circle cx="27" cy="31" r="2.6" fill="#14296b"/></svg>
+    <div class="wrap mast">
+      <div class="mast-top label"><span>Calabar, Cross River State</span><span>Creche · Reception · Nursery · Primary</span><span>Registration is ongoing</span></div>
+      <h1>The Pathfinder <i>Elite</i></h1>
+      <p class="dek">A small school behind the blue gates on Ediba Lane, where every day starts like a good dream.</p>
+      <nav class="mast-bottom label" aria-label="Sections"><a href="#story">The school</a><a href="#classes">Classes</a><a href="#services">Services</a><a href="#essay">Photographs</a><a href="#admissions">Admissions</a></nav>
     </div>
-    <div class="grp"><span class="hide-sm"><svg><use href="#i-phone"/></svg>Call or WhatsApp: <a href="tel:+2348033483918">+234 803 348 3918</a></span><span class="socials"><!-- REPLACE the two # links below with the school Facebook and TikTok page URLs --><a class="soc" href="#" target="_blank" rel="noopener" aria-label="Pathfinder Elite on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg></a><a class="soc" href="#" target="_blank" rel="noopener" aria-label="Pathfinder Elite on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.4 2.3 1.9 3.8 4.2 4v3.4c-1.6 0-3-.5-4.2-1.3v6.2a5.8 5.8 0 11-5.8-5.8c.3 0 .6 0 .9.1v3.5a2.4 2.4 0 102 2.3V3z"/></svg></a></span></div>
-  </div>
-</div>
+  </header>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="#top" aria-label="Pathfinder Elite International Schools home">
-      <img class="logo-mark" src="img/logo.png" alt="">
-      <span class="logo-text"><strong>Pathfinder Elite</strong><small>International Schools</small></span>
-    </a>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
-    <ul class="menu" id="menu">
-      <li><a href="#top">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#classes">Classes</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a class="btn btn-sun" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">Enrol on WhatsApp</a></li>
-    </ul>
-  </div>
-</header>
-
-<main id="top">
-  <section class="hero">
-    <div class="slides" id="slides">
-      <img src="img/playground.jpg" fetchpriority="high" alt="Pathfinder Elite pupils in uniform playing on the swings">
-      <img data-src="img/seesaw-swings-4.jpg" alt="Pupils on the see-saw and swings in the school playground">
-      <img data-src="img/seesaw-swing-close.jpg" alt="Pupils enjoying the see-saw and swing">
-    </div>
+  <section class="hero intro">
+    <div class="blob b1" aria-hidden="true"></div><div class="blob b2" aria-hidden="true"></div>
     <div class="wrap">
-      <div class="hero-copy">
-        <h1>Raising <em>determined</em> learners of character and excellence</h1>
-        <p>A happy, disciplined school behind the blue gates on Ediba Lane, Calabar, for children from Creche to Primary.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-sun" href="tel:+2348033483918"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call the Principal</a>
-          <a class="btn btn-white" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener"><svg class="i-wa" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp us</a>
+      <div>
+        <span class="eyebrow"><i></i>Creche · Reception · Nursery · Primary</span>
+        <h2 class="h-hero">Strong foundations. Good character. <span class="hl">A school your child will love.<svg viewBox="0 0 300 18" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C 80 3, 200 3, 296 9" stroke="#f6b6ae" stroke-width="7" fill="none" stroke-linecap="round"/></svg></span></h2>
+        <p class="lead">At Pathfinder Elite, children learn to read early, count with confidence and grow in discipline and faith, taught by teachers who know every child by name.</p>
+        <div class="ctas">
+          <a class="btn btn-main" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">Book a visit on WhatsApp <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+          <a class="btn btn-soft" href="tel:+2348033483918">Call the Principal</a>
         </div>
-        <div class="reg"><b>Registration is ongoing:</b> Creche · Reception · Nursery · Primary</div>
+        <div class="trust">
+          <span><svg viewBox="0 0 20 20" fill="none" stroke="#2fb37a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>Jolly Phonics</span>
+          <span><svg viewBox="0 0 20 20" fill="none" stroke="#2fb37a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>School bus</span>
+          <span><svg viewBox="0 0 20 20" fill="none" stroke="#2fb37a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>After-school care</span>
+        </div>
+        <p class="where"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 00-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>#9 Ediba Lane, off Ediba Road, Calabar Municipality</p>
+      </div>
+      <div class="stage" aria-hidden="true">
+        <div class="sticker">Now<br>enrolling</div>
+        <div class="card-app reg">
+          <div class="reg-top"><span class="who"><img src="/img/logo.png" alt="">Pathfinder Elite</span><span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="photo-in"><img src="/img/thumb/playground.jpg" alt=""></div>
+          <h3>Admissions are open</h3>
+          <p class="sub">#9 Ediba Lane, off Ediba Road, Calabar</p>
+          <div class="tbl"><div>Creche<b>Open</b></div><div>Reception<b>Open</b></div><div>Nursery<b>Open</b></div><div>Primary<b>Open</b></div></div>
+        </div>
+        <div class="card-app wa">
+          <div class="wa-head"><i><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2z"/></svg></i><span><b>Chat with the Principal</b><small>WhatsApp · +234 803 348 3918</small></span></div>
+          <div class="bubble">Hello, I'd like to ask about admission at Pathfinder Elite.</div>
+        </div>
       </div>
     </div>
-    <div class="dots" id="dots" role="group" aria-label="Hero photos"></div>
   </section>
-  <div class="curb" aria-hidden="true"></div>
 
-  <section class="about" id="about">
+  <section id="classes">
     <div class="wrap">
-      <div class="scrap">
-        <img class="main" src="img/gate-car.jpg" srcset="img/thumb/gate-car.jpg 720w, img/gate-car.jpg 933w" sizes="(max-width:900px) min(520px,100vw), 45vw" loading="lazy" decoding="async" alt="The Pathfinder Elite gate, flags and signboard on Ediba Lane, Calabar">
-        <img class="inset" src="img/swings-pair.jpg" srcset="img/thumb/swings-pair.jpg 720w, img/swings-pair.jpg 1400w" sizes="(max-width:900px) 280px, 26vw" loading="lazy" decoding="async" alt="Two pupils at the school swings">
-        <span class="tape" aria-hidden="true"></span>
+      <div class="head center">
+        <span class="eyebrow"><i></i>Admissions open</span>
+        <h2>A place for every stage</h2>
+        <p>Children can join at any stage and move up through the school with the same caring faces around them.</p>
+      </div>
+      <div class="classes-grid">
+        <article class="cls k1"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span><h3>Creche</h3><p>Warm, gentle care for babies and toddlers, with calm routines and plenty of play.</p><a class="more" href="#admissions">Ask about Creche →</a></article>
+        <article class="cls k2"><span class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="7" height="7" rx="1.5"/><rect x="13" y="11" width="7" height="7" rx="1.5"/><rect x="8.5" y="4" width="7" height="7" rx="1.5"/></svg></span><h3>Reception</h3><p>Your child's first classroom: songs, shapes, colours and first letters.</p><a class="more" href="#admissions">Ask about Reception →</a></article>
+        <article class="cls k3"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5.5c2.5-1 5.5-1 8 .5 2.5-1.5 5.5-1.5 8-.5v13c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13"/></svg></span><h3>Nursery</h3><p>Jolly Phonics, early numbers, art and music, so children start reading with confidence.</p><a class="more" href="#admissions">Ask about Nursery →</a></article>
+        <article class="cls k4"><span class="ico"><svg viewBox="0 0 24 24"><path d="M3 10l9-5 9 5-9 5z"/><path d="M7 12.5V17c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5"/></svg></span><h3>Primary</h3><p>English, maths, science and more, taught with high standards, discipline and care.</p><a class="more" href="#admissions">Ask about Primary →</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="story">
+    <div class="wrap">
+      <div class="pics">
+        <div class="p-main"><img src="/img/gate-car.jpg" alt="The Pathfinder Elite gate, flags and signboard on Ediba Lane"></div>
+        <div class="p-small"><img src="/img/thumb/swings-pair.jpg" alt="Two pupils on the swings"></div>
       </div>
       <div class="about-copy">
-        <h2>Behind the blue gates on Ediba Lane</h2>
-        <p>Painted walls, a sandy playground and teachers who know every child by name. At Pathfinder Elite, children build strong foundations in reading, numbers and good character, with plenty of time to play.</p>
-        <p class="motto"><span>Motto:</span>Determination Personified</p>
+        <span class="eyebrow"><i></i>Our school</span>
+        <h2>Small enough to know every child by name</h2>
+        <p>Behind our blue gates on Ediba Lane are bright murals, a sandy playground with swings and see-saws, and classrooms where every child is seen. We keep things personal, so children feel safe, settle quickly and do their best.</p>
+        <span class="motto"><small>Motto</small>Determination Personified</span>
         <div class="vm">
-          <div class="v"><h3>Our Vision</h3><p>To build a school that will stand the test of time by raising determined learners of character and excellence.</p></div>
-          <div class="m"><h3>Our Mission</h3><p>Raising determined, disciplined and God-fearing learners that will make a positive impact in our society.</p></div>
+          <div><h3>Our Vision</h3><p>To build a school that will stand the test of time by raising determined learners of character and excellence.</p></div>
+          <div><h3>Our Mission</h3><p>Raising determined, disciplined and God-fearing learners that will make a positive impact in our society.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="classes" id="classes">
+  <section id="services">
     <div class="wrap">
       <div class="head">
-        <h2>Registration is ongoing into</h2>
-        <p>Four sections, one school. Your child keeps familiar faces and routines as they move up.</p>
+        <span class="eyebrow"><i></i>Services</span>
+        <h2>Everything a busy family needs</h2>
+        <p>Learning comes first, but we know school runs, pick-up times and friendships matter too.</p>
       </div>
-      <div class="board">
-        <div class="level l1"><h3>Creche</h3><p>Loving care, gentle routines and sensory play for our littlest pathfinders.</p></div>
-        <div class="level l2"><h3>Reception</h3><p>A smooth first step into the classroom, with songs, shapes and first letters.</p></div>
-        <div class="level l3"><h3>Nursery</h3><p>Jolly Phonics, early numbers, art and music that build confident young readers.</p></div>
-        <div class="level l4"><h3>Primary</h3><p>English, maths, science and more, taught with discipline and care.</p></div>
+      <div class="svc-grid">
+        <div class="svc" style="--t:var(--tint-red);--s:var(--red2)"><i><svg viewBox="0 0 24 24"><path d="M4 5.5c2.5-1 5.5-1 8 .5 2.5-1.5 5.5-1.5 8-.5v13c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13"/></svg></i><b>Jolly Phonics</b><span>A proven, fun way to learn sounds, reading and spelling.</span></div>
+        <div class="svc" style="--t:var(--tint-sun);--s:#a07800"><i><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.6-7 10-7 10z"/></svg></i><b>Dedicated staff</b><span>Caring teachers who follow every child's progress closely.</span></div>
+        <div class="svc" style="--t:var(--tint-sky);--s:var(--navy)"><i><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="11" rx="2.5"/><path d="M3 11h18M8 16v2M16 16v2"/></svg></i><b>School bus</b><span>Safe, reliable transport to and from school.</span></div>
+        <div class="svc" style="--t:#e3f6ec;--s:var(--green)"><i><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v9H4z"/><path d="M10 20v-5h4v5"/></svg></i><b>After-school care</b><span>Supervised care until you can collect your child.</span></div>
+        <div class="svc" style="--t:#eee9ff;--s:#5a3fd0"><i><svg viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3 19c0-3 2.5-5.5 5.5-5.5S14 16 14 19M14.5 14c2.8 0 5 1.8 5.5 5"/></svg></i><b>Social clubs</b><span>Activities that build friendships, teamwork and talents.</span></div>
       </div>
     </div>
   </section>
 
-  <section class="svc" id="services">
-    <div class="wrap">
-      <div>
-        <div class="head" style="margin-bottom:24px">
-          <h2>What comes with a place at Pathfinder</h2>
-          <p>Bright murals, a tyre garden and a playground with swings and see-saws make the campus a happy place to learn.</p>
-        </div>
-        <ul class="svc-list">
-          <li><i style="background:#ffe3e1"><svg viewBox="0 0 24 24" stroke="#c42d2d"><path d="M4 5.5C6.5 4.5 9.5 4.5 12 6c2.5-1.5 5.5-1.5 8-.5v13c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13"/></svg></i><div><b>Jolly Phonics classes</b><span>Reading and spelling taught through sounds and actions.</span></div></li>
-          <li><i style="background:#fff3c4"><svg viewBox="0 0 24 24" stroke="#16307a"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></i><div><b>Dedicated staff</b><span>Teachers committed to every child's progress.</span></div></li>
-          <li><i style="background:#ddf1fc"><svg viewBox="0 0 24 24" stroke="#16307a"><rect x="3" y="5" width="18" height="11" rx="2.5"/><path d="M3 11h18M8 16v2M16 16v2"/></svg></i><div><b>School bus services</b><span>Safe transport to and from school.</span></div></li>
-          <li><i style="background:#ddf5e6"><svg viewBox="0 0 24 24" stroke="#1f8a4c"><path d="M4 11l8-6 8 6v9H4z"/><path d="M10 20v-5h4v5"/></svg></i><div><b>After school care</b><span>A supervised space after the school day ends.</span></div></li>
-          <li><i style="background:#ece6ff"><svg viewBox="0 0 24 24" stroke="#5a3fd0"><circle cx="8.5" cy="8" r="3"/><circle cx="16" cy="9" r="2.5"/><path d="M3 19c0-3 2.5-5.5 5.5-5.5S14 16 14 19M14.5 14c2.8 0 5 1.8 5.5 5"/></svg></i><div><b>Social clubs</b><span>Clubs that build friendships, teamwork and talents.</span></div></li>
-        </ul>
-      </div>
-      <div class="svc-photo"><img src="img/garden-mural.jpg" srcset="img/thumb/garden-mural.jpg 720w, img/garden-mural.jpg 1400w" sizes="(max-width:900px) 100vw, 45vw" loading="lazy" decoding="async" alt="The school's garden of painted tyres beside a mural wall"></div>
-    </div>
-  </section>
-
-  <div class="cta">
-    <img src="img/seesaw-swings-3.jpg" srcset="img/thumb/seesaw-swings-3.jpg 720w, img/seesaw-swings-3.jpg 1400w" sizes="100vw" alt="" loading="lazy" decoding="async">
-    <div class="wrap">
-      <div>
-        <h2>There's a place on the swings for your child.</h2>
-        <p>Call or WhatsApp <a href="tel:+2348033483918">+234 803 348 3918</a>. Registration is ongoing.</p>
-      </div>
-      <a class="btn btn-sun" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chat on WhatsApp</a>
-    </div>
-  </div>
-  <div class="curb" aria-hidden="true"></div>
-
-  <section id="gallery">
+  <section id="essay" style="padding-top:20px">
     <div class="wrap">
       <div class="head">
-        <h2>Break time at Pathfinder</h2>
-        <p>Tap any photo to see it larger.</p>
+        <span class="eyebrow"><i></i>Gallery</span>
+        <h2>Life at Pathfinder</h2>
+        <p>Break time in our playground, under the goldfish mural.</p>
       </div>
-      <div class="gallery-grid">
-        <figure class="g-wide g-tall" tabindex="0"><img src="img/thumb/playground.jpg" data-full="img/playground.jpg" decoding="async" alt="Pupils laughing together at the swings" loading="lazy"></figure>
-        <figure class="g-tall" tabindex="0"><img src="img/thumb/gate-sign.jpg" data-full="img/gate-sign.jpg" decoding="async" alt="School entrance with flags and signboard" loading="lazy"></figure>
-        <figure tabindex="0"><img src="img/thumb/swings-girls.jpg" data-full="img/swings-girls.jpg" decoding="async" alt="Two girls in school uniform at the swings" loading="lazy"></figure>
-        <figure tabindex="0"><img src="img/thumb/swings-fish.jpg" data-full="img/swings-fish.jpg" decoding="async" alt="Pupils on the swings beside the goldfish mural" loading="lazy"></figure>
-        <figure class="g-wide" tabindex="0"><img src="img/thumb/swings-seesaw.jpg" data-full="img/swings-seesaw.jpg" decoding="async" alt="Pupils on the see-saw and swings" loading="lazy"></figure>
-        <figure class="g-wide" tabindex="0"><img src="img/thumb/garden-mural.jpg" data-full="img/garden-mural.jpg" decoding="async" alt="Painted tyre garden and mural wall at the school" loading="lazy"></figure>
-        <figure tabindex="0"><img src="img/thumb/swings-boys.jpg" data-full="img/swings-boys.jpg" decoding="async" alt="Boys swinging during break time" loading="lazy"></figure>
-        <figure tabindex="0"><img src="img/thumb/swings-pair-2.jpg" data-full="img/swings-pair-2.jpg" decoding="async" alt="A boy and girl on the swings" loading="lazy"></figure>
-        <figure class="g-wide" tabindex="0"><img src="img/thumb/billboard.jpg" data-full="img/billboard.jpg" decoding="async" alt="The Pathfinder Elite billboard with vision, mission and services" loading="lazy"></figure>
-        <figure class="g-wide" tabindex="0"><img src="img/thumb/seesaw-swings-2.jpg" data-full="img/seesaw-swings-2.jpg" decoding="async" alt="Pupils taking turns on the see-saw and swings" loading="lazy"></figure>
-        <figure class="g-wide" tabindex="0"><img src="img/thumb/street-view.jpg" data-full="img/street-view.jpg" decoding="async" alt="The school wall and signboard seen from Ediba Lane" loading="lazy"></figure>
+      <div class="gal">
+        <figure class="g-big"><img src="/img/thumb/seesaw-swings-2.jpg" alt="Pupils on the see-saw and swings"></figure>
+        <figure><img src="/img/thumb/swings-girls.jpg" alt="Two girls in uniform at the swings"></figure>
+        <figure><img src="/img/thumb/swings-fish.jpg" alt="Pupils swinging beside the goldfish mural"></figure>
+        <figure class="g-wide"><img src="/img/thumb/garden-mural.jpg" alt="Painted tyre garden and mural wall"></figure>
+        <figure class="g-wide"><img src="/img/thumb/swings-pair-2.jpg" alt="A boy and girl on the swings"></figure>
+        <figure class="g-wide"><img src="/img/thumb/street-view.jpg" alt="The school wall and signboard seen from Ediba Lane"></figure>
       </div>
     </div>
   </section>
 
-  <section class="admit" id="contact">
+  <section class="cta" id="admissions">
     <div class="wrap">
-      <div>
-        <div class="head" style="margin-bottom:0">
-          <h2>Come and see the school</h2>
-          <p>Visit us on Ediba Lane, call the Principal, or send your child's details on WhatsApp.</p>
+      <div class="cta-box">
+        <div>
+          <h2>Come and see us</h2>
+          <p>The best way to know a school is to visit. Message the Principal on WhatsApp and we'll arrange a time that suits you.</p>
+          <div class="contact" style="margin-top:26px">
+            <div class="row"><small>Address</small><b>#9 Ediba Lane, off Ediba Road, Calabar Municipality, Cross River State</b></div>
+            <div class="row"><small>Phone &amp; WhatsApp (Principal)</small><b><a href="tel:+2348033483918" style="text-decoration:none">+234 803 348 3918</a></b></div>
+            <div class="row"><small>Email</small><b>pathfinderinternational@gmail.com</b></div>
+          </div>
         </div>
-        <ul class="contact-list">
-          <li><i style="background:var(--red)"><svg><use href="#i-pin"/></svg></i><div><b>Address</b><span>#9 Ediba Lane, off Ediba Road, Calabar Municipality, Cross River State</span></div></li>
-          <li><i style="background:var(--sign-cyan)"><svg><use href="#i-phone"/></svg></i><div><b>Phone &amp; WhatsApp (Principal)</b><a href="tel:+2348033483918">+234 803 348 3918</a> · <a href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">Chat on WhatsApp</a></div></li>
-          <li><i style="background:var(--sign-teal)"><svg><use href="#i-mail"/></svg></i><div><b>Email</b><a href="mailto:pathfinderinternational@gmail.com">pathfinderinternational@gmail.com</a></div></li>
-        </ul>
+        <form class="enq" id="enquiry" novalidate>
+          <h3>Send an enquiry</h3>
+          <p class="sub">Add a few details and WhatsApp opens with your message ready for the Principal.</p>
+          <div class="f"><label for="pname">Parent or guardian name</label><input id="pname" required autocomplete="name"></div>
+          <div class="f"><label for="phone">Phone number</label><input id="phone" type="tel" required autocomplete="tel"></div>
+          <div class="f"><label for="cname">Child's name</label><input id="cname" required></div>
+          <div class="f"><label for="section">Class</label><select id="section" required><option value="">Choose a class</option><option>Creche</option><option>Reception</option><option>Nursery</option><option>Primary</option></select></div>
+          <div class="f full"><label for="msg">Message (optional)</label><textarea id="msg"></textarea></div>
+          <button class="btn btn-sun full" type="submit">Continue on WhatsApp</button>
+          <p class="note full" id="note" role="status" hidden></p>
+        </form>
       </div>
-      <form class="enquiry" id="enquiry" novalidate>
-        <h3>Admission enquiry</h3>
-        <p class="sub">Fill this in and WhatsApp opens with your message ready to send to the Principal.</p>
-        <div class="field"><label for="pname">Parent or guardian name</label><input id="pname" name="pname" required autocomplete="name"></div>
-        <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" required autocomplete="tel"></div>
-        <div class="field"><label for="cname">Child's name</label><input id="cname" name="cname" required></div>
-        <div class="field"><label for="section">Class</label>
-          <select id="section" name="section" required>
-            <option value="">Choose a class</option><option>Creche</option><option>Reception</option><option>Nursery</option><option>Primary</option>
-          </select></div>
-        <div class="field full"><label for="email">Email (optional)</label><input id="email" name="email" type="email" autocomplete="email"></div>
-        <div class="field full"><label for="msg">Message (optional)</label><textarea id="msg" name="msg"></textarea></div>
-        <button class="btn btn-sun" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Send on WhatsApp</button>
-        <div class="form-note" id="formNote" role="status" hidden></div>
-      </form>
     </div>
   </section>
 </main>
-
-<div class="curb" aria-hidden="true"></div>
-<footer>
-  <div class="wrap">
-    <div class="foot">
-      <div style="display:grid;gap:16px;align-content:start">
-        <a class="logo" href="#top"><img class="logo-mark" src="img/logo.png" alt=""><span class="logo-text"><strong>Pathfinder Elite</strong><small>International Schools</small></span></a>
-        <p class="motto"><span>Motto:</span>Determination Personified</p>
-        <div class="socials socials-lg"><!-- REPLACE the two # links below with the school Facebook and TikTok page URLs --><a class="soc" href="#" target="_blank" rel="noopener" aria-label="Pathfinder Elite on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V9c0-.6.4-1 1-1z"/></svg></a><a class="soc" href="#" target="_blank" rel="noopener" aria-label="Pathfinder Elite on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 3c.4 2.3 1.9 3.8 4.2 4v3.4c-1.6 0-3-.5-4.2-1.3v6.2a5.8 5.8 0 11-5.8-5.8c.3 0 .6 0 .9.1v3.5a2.4 2.4 0 102 2.3V3z"/></svg></a></div>
-      </div>
-      <div><h4>Quick links</h4><ul><li><a href="#about">About us</a></li><li><a href="#classes">Classes</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li></ul></div>
-      <div><h4>Classes</h4><ul><li>Creche</li><li>Reception</li><li>Nursery</li><li>Primary</li></ul></div>
-      <div><h4>Contact</h4><ul><li>#9 Ediba Lane, off Ediba Road, Calabar Municipality</li><li>Call or WhatsApp:<br><a href="tel:+2348033483918">+234 803 348 3918</a></li><li style="overflow-wrap:anywhere"><a href="mailto:pathfinderinternational@gmail.com">pathfinderinternational@gmail.com</a></li></ul></div>
-    </div>
-    <div class="copy">© 2026 Pathfinder Elite International Schools, Calabar.</div>
+<a class="wa-float" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener" aria-label="Chat with the Principal on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.2-.8-2.7-1.1-4.4-3.9-4.5-4.1-.1-.2-1.1-1.4-1.1-2.7s.7-1.9.9-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2c.1.2.1.3 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg></a>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand"><img src="/img/logo.png" alt=""><div><b>Pathfinder Elite International Schools</b><span>Determination Personified</span></div></div>
+    <div><h4>Visit</h4><p>#9 Ediba Lane, off Ediba Road<br>Calabar Municipality, Cross River State</p></div>
+    <div><h4>Contact</h4><p><a href="tel:+2348033483918">+234 803 348 3918</a><br><a href="mailto:pathfinderinternational@gmail.com">pathfinderinternational@gmail.com</a></p></div>
+    <div><h4>Explore</h4><p><a href="#classes">Classes</a> · <a href="#story">Our school</a> · <a href="#services">Services</a> · <a href="#essay">Gallery</a> · <a href="#admissions">Visit us</a></p></div>
   </div>
+  <p class="copy">© 2026 Pathfinder Elite International Schools, Calabar</p>
 </footer>
-
-<nav class="callbar" aria-label="Contact the school">
-  <a class="btn btn-sun" href="tel:+2348033483918"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
-  <a class="btn btn-navy" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
-</nav>
-
 <script>
 (function(){
-  var b=document.getElementById('burger'),m=document.getElementById('menu');
-  function setMenu(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu')}
-  b.addEventListener('click',function(){setMenu(!m.classList.contains('open'))});
-  m.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open')){setMenu(false);b.focus()}});
-
-  // hero photos
-  var sl=document.getElementById('slides'),imgs=sl.querySelectorAll('img'),dots=document.getElementById('dots'),cur=0,timer;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var playing=!reduce,ICO_PAUSE='<path d="M7 5h3v14H7zM14 5h3v14h-3z"/>',ICO_PLAY='<path d="M8 5l11 7-11 7z"/>';
-  imgs.forEach(function(_,i){var d=document.createElement('button');d.setAttribute('aria-label','Show photo '+(i+1));d.addEventListener('click',function(){go(i);setPlaying(false)});dots.appendChild(d)});
-  var pb=document.createElement('button');pb.className='pause';dots.appendChild(pb);
-  pb.addEventListener('click',function(){setPlaying(!playing)});
-  function go(i){imgs[cur].classList.remove('on');dots.children[cur].classList.remove('on');dots.children[cur].removeAttribute('aria-current');cur=(i+imgs.length)%imgs.length;imgs[cur].classList.add('on');dots.children[cur].classList.add('on');dots.children[cur].setAttribute('aria-current','true')}
-  function setPlaying(on){playing=on;clearInterval(timer);if(on)timer=setInterval(function(){go(cur+1)},6500);pb.setAttribute('aria-label',on?'Pause slideshow':'Play slideshow');pb.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+(on?ICO_PAUSE:ICO_PLAY)+'</svg>'}
-  go(0);sl.classList.add('ready');setPlaying(playing);
-  // later slides load after the page, so the first view comes in quickly on mobile data
-  window.addEventListener('load',function(){imgs.forEach(function(im){if(im.dataset.src)im.src=im.dataset.src})});
-
-  // gallery lightbox
-  var ico={x:'<path d="M6 6l12 12M18 6L6 18"/>',l:'<path d="M15 5l-7 7 7 7"/>',r:'<path d="M9 5l7 7-7 7"/>'};
-  function svg(p){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+p+'</svg>'}
-  var figs=[].slice.call(document.querySelectorAll('.gallery-grid figure')),lb=null,li=0;
-  function show(i){li=(i+figs.length)%figs.length;var s=figs[li].querySelector('img'),t=lb.querySelector('img');t.src=s.dataset.full||s.src;t.alt=s.alt}
-  function open(i){
-    lb=document.createElement('div');lb.className='lightbox';lb.setAttribute('role','dialog');lb.setAttribute('aria-modal','true');lb.setAttribute('aria-label','Photo viewer');
-    lb.innerHTML='<img alt=""><button class="lb-btn lb-close" aria-label="Close">'+svg(ico.x)+'</button><button class="lb-btn lb-prev" aria-label="Previous photo">'+svg(ico.l)+'</button><button class="lb-btn lb-next" aria-label="Next photo">'+svg(ico.r)+'</button>';
-    document.body.appendChild(lb);show(i);lb.querySelector('.lb-close').focus();
-    lb.addEventListener('click',function(e){var c=e.target.classList;if(e.target===lb||c.contains('lb-close'))close();else if(c.contains('lb-prev'))show(li-1);else if(c.contains('lb-next'))show(li+1)});
-    var x0=null;
-    lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
-    lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>50)show(dx<0?li+1:li-1)});
-  }
-  function close(){if(lb){lb.remove();lb=null;figs[li].focus()}}
-  figs.forEach(function(f,i){f.addEventListener('click',function(){open(i)});f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(i)}})});
-  document.addEventListener('keydown',function(e){if(!lb)return;if(e.key==='Escape')close();
-    if(e.key==='Tab'){var bs=lb.querySelectorAll('button'),first=bs[0],last=bs[bs.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}else if(!lb.contains(document.activeElement)){e.preventDefault();first.focus()}}if(e.key==='ArrowLeft')show(li-1);if(e.key==='ArrowRight')show(li+1)});
-
-  // enquiry form
-  var f=document.getElementById('enquiry'),note=document.getElementById('formNote'),req=['pname','phone','cname','section'];
+  var f=document.getElementById('enquiry'),note=document.getElementById('note'),req=['pname','phone','cname','section'];
+  function v(id){return document.getElementById(id).value.trim()}
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var missing=req.filter(function(id){var el=document.getElementById(id),bad=!el.value.trim();el.setAttribute('aria-invalid',bad);return bad});
     note.hidden=false;
     if(missing.length){note.textContent='Please add your name, phone number, your child\'s name and the class you want.';document.getElementById(missing[0]).focus();return}
-    var v=function(id){return document.getElementById(id).value.trim()};
-    var lines=['Hello, I would like to ask about admission at Pathfinder Elite.','Parent/guardian: '+v('pname'),'Phone: '+v('phone'),'Child: '+v('cname'),'Class: '+v('section')];
-    if(v('email'))lines.push('Email: '+v('email'));
-    if(v('msg'))lines.push('','Message: '+v('msg'));
+    var lines=['Hello, I\'d like to ask about admission at Pathfinder Elite.','Parent: '+v('pname'),'Phone: '+v('phone'),'Child: '+v('cname'),'Class: '+v('section')];
+    if(v('msg'))lines.push('Message: '+v('msg'));
     var url='https://wa.me/2348033483918?text='+encodeURIComponent(lines.join('\n'));
-    note.textContent='Opening WhatsApp with your message. Press send in WhatsApp so it reaches the Principal. ';
-    var a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';a.textContent='Open WhatsApp again';note.appendChild(a);
-    var w=window.open(url,'_blank');if(w)w.opener=null;else location.href=url;
+    note.innerHTML='Opening WhatsApp with your message… If it doesn\'t open, <a href="'+url+'" target="_blank" rel="noopener">tap here</a>.';
+    var w=window.open(url,'_blank','noopener');
+    if(!w)location.href=url;
   });
   req.forEach(function(id){document.getElementById(id).addEventListener('input',function(){this.removeAttribute('aria-invalid')})});
 })();
 </script>
-
 </body>
 </html>

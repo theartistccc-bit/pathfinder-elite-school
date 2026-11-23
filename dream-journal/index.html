@@ -9,7 +9,7 @@
 <link rel="icon" href="/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap">
 <style>
 /* Dream Journal: a magazine feature printed on the sky.
    Editorial bones (masthead, lead story, drop cap, pull quote, contents, captioned photo essay, admissions notice)
@@ -56,103 +56,113 @@ p{margin:0}
 .mast-bottom a{text-decoration:none}
 .mast-bottom a:hover{color:var(--red)}
 
-/* lead story with floating arch */
-.lead{padding-block:56px 80px;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
-.float{position:relative;padding:10px 30px 0 0}
-.float figcaption{margin-top:90px;max-width:60%}
-.arch{border-radius:999px 999px 22px 22px;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 60px rgba(22,48,122,.22);animation:drift 9s ease-in-out infinite}
+/* ---------- below the masthead: modern magazine, not newspaper ---------- */
+body{font-family:"DM Sans",system-ui,sans-serif;font-size:19px;line-height:1.65}
+.mast .dek{font-family:var(--text)}
+.wrap{max-width:1240px}
+section{position:relative}
+h2{font-family:var(--display);font-weight:400;color:var(--ink);letter-spacing:-.02em}
+.pill{display:inline-block;font-weight:700;font-size:.9rem;padding:7px 16px;border-radius:99px;background:#fff;color:var(--red);box-shadow:0 6px 18px rgba(22,48,122,.1)}
+.pill-sun{background:var(--sun);color:var(--ink)}
+.sec-head{display:grid;gap:14px;max-width:720px;margin-bottom:56px}
+.sec-head h2{font-size:clamp(3rem,7vw,5.6rem);line-height:.95}
+.sec-head p{font-size:1.2rem;color:var(--muted)}
+
+/* story */
+.story{padding-block:110px 120px}
+.story-in{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+.float{position:relative;padding:0 50px 80px 0}
+.arch{border-radius:999px 999px 30px 30px;overflow:hidden;border:10px solid #fff;box-shadow:0 40px 80px rgba(22,48,122,.25);animation:drift 9s ease-in-out infinite}
 .arch img{width:100%;aspect-ratio:3/4;object-fit:cover}
-.bubble{position:absolute;right:0;top:58%;width:46%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:7px solid #fff;box-shadow:0 20px 40px rgba(22,48,122,.22);animation:drift 7s ease-in-out infinite;animation-delay:-3s}
+.bubble{position:absolute;right:0;bottom:0;width:50%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:9px solid #fff;box-shadow:0 26px 50px rgba(22,48,122,.25);animation:drift 7s ease-in-out infinite;animation-delay:-3s}
 .bubble img{width:100%;height:100%;object-fit:cover}
-@keyframes drift{50%{translate:0 -14px}}
-figcaption{font-family:var(--label);font-size:.78rem;color:var(--muted);margin-top:12px;line-height:1.5}
-.kick{color:var(--red)}
-.lead h2{font-size:clamp(2.4rem,5.2vw,4.4rem);margin-block:12px 18px}
-.lead .sub{font-style:italic;font-size:1.22rem;color:var(--muted);margin-bottom:20px}
-.byline{font-family:var(--label);font-size:.82rem;color:var(--muted);border-block:1px solid var(--rule);padding-block:10px;margin-bottom:22px}
-.body p+p{margin-top:16px}
-.drop::first-letter{float:left;font-family:var(--display);font-size:5.4rem;line-height:.82;padding:6px 10px 0 0;color:var(--red)}
+.fish.small{position:absolute;width:90px;left:-30px;top:12%;animation:wiggle 5s ease-in-out infinite}
+@keyframes wiggle{50%{translate:24px -10px;rotate:6deg}}
+@keyframes drift{50%{translate:0 -16px}}
+.story-copy{display:grid;gap:24px;justify-items:start}
+.story-copy h2{font-size:clamp(3rem,6.4vw,5.4rem);line-height:.95}
+.story-copy .big{font-family:var(--display);font-style:italic;font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.2;color:var(--navy)}
+.story-copy p{font-size:1.15rem;color:var(--muted);max-width:50ch}
+.link{font-weight:700;color:var(--red);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
+.link:hover{color:var(--navy)}
 
-/* pull quote among clouds */
-.pull{position:relative;overflow:hidden;padding-block:90px;background:linear-gradient(180deg,var(--paper),var(--sky-mid) 40%,var(--dawn) 100%)}
-.pull .cloud{opacity:.8}
-.pull blockquote{position:relative;z-index:2;margin:0 auto;max-width:900px;text-align:center}
-.pull blockquote p{font-family:var(--display);font-style:italic;font-size:clamp(2rem,4.6vw,3.6rem);line-height:1.1}
-.pull cite{display:block;margin-top:22px;font-style:normal;color:var(--red)}
+/* quote */
+.quote{overflow:hidden;padding-block:130px;background:linear-gradient(180deg,var(--paper),var(--sky-mid) 35%,var(--dawn))}
+.quote blockquote{position:relative;z-index:2;margin:0 auto;max-width:1040px;text-align:center}
+.quote blockquote p{font-family:var(--display);font-style:italic;font-size:clamp(2.4rem,6vw,5rem);line-height:1.02;letter-spacing:-.02em;color:var(--ink)}
+.quote cite{display:inline-block;margin-top:30px;font-style:normal;font-weight:700;color:var(--red);font-size:1rem}
+.q1{width:220px;height:60px;left:3%;top:18%}.q1::before{width:100px;height:100px;left:30px;top:-52px}.q1::after{width:76px;height:76px;left:110px;top:-36px}
+.q2{width:170px;height:48px;right:5%;bottom:16%}.q2::before{width:76px;height:76px;left:22px;top:-40px}.q2::after{width:58px;height:58px;left:86px;top:-26px}
 
-/* contents on swings */
-.contents{padding-block:80px 40px}
-.contents-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-bottom:14px}
-.contents-head h2{font-size:clamp(2.2rem,5vw,3.6rem)}
-.contents-head p{max-width:40ch;color:var(--muted);font-size:1rem}
+/* classes */
+.classes{padding-block:120px 110px}
 .rack{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-.seat{display:grid;justify-items:center;animation:sway 5.5s ease-in-out infinite;transform-origin:50% -200px}
+.seat{display:grid;justify-items:center;animation:sway 5.5s ease-in-out infinite;transform-origin:50% -160px}
 .seat:nth-child(2){animation-delay:-1.4s}.seat:nth-child(3){animation-delay:-2.8s}.seat:nth-child(4){animation-delay:-4.1s}
 @keyframes sway{0%,100%{rotate:-2deg}50%{rotate:2deg}}
-.chains{width:64%;height:120px;border-inline:3px dotted #7a4b3a}
-.plank{width:100%;background:#fff;border:1px solid var(--rule);border-top:6px solid var(--red);padding:20px 20px 24px;display:grid;gap:8px;box-shadow:0 18px 34px rgba(22,48,122,.12)}
-.seat:nth-child(2) .plank{border-top-color:#1f9e8e}.seat:nth-child(3) .plank{border-top-color:var(--sun)}.seat:nth-child(4) .plank{border-top-color:var(--navy)}
-.plank h3{font-size:clamp(1.8rem,3vw,2.4rem)}
-.plank p{color:var(--muted);font-size:.98rem}
-.plank .label{color:var(--red)}
+.chains{width:60%;height:110px;border-inline:4px dotted #8a5a40}
+.plank{width:100%;background:var(--c);color:var(--t,#fff);border-radius:28px;padding:30px 26px 32px;display:grid;gap:10px;box-shadow:0 26px 50px rgba(22,48,122,.18)}
+.plank h3{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,3.4vw,3rem);line-height:1;color:inherit}
+.plank p{font-size:1.02rem;opacity:.92}
 
-/* services + vision */
-.split{padding-block:70px 80px;display:grid;grid-template-columns:1fr 1fr;gap:56px}
-.split h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:22px}
-.svc{margin:0;padding:0;list-style:none}
-.svc li{padding-block:14px;border-top:1px solid var(--rule);display:grid;grid-template-columns:18px 1fr;gap:14px}
-.svc li::before{content:"";width:14px;height:14px;margin-top:7px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,var(--sky-top))}
-.svc b{font-family:var(--label);font-weight:600;font-size:1rem;display:block}
-.svc span{color:var(--muted);font-size:1rem}
-.side{border-left:1px solid var(--rule);padding-left:56px;display:grid;gap:26px;align-content:start}
-.side h3{font-size:1.8rem;margin-bottom:8px}
-.motto{font-family:var(--display);font-style:italic;font-size:clamp(2rem,4vw,2.8rem);color:var(--red);line-height:1.05}
+/* offer */
+.offer{padding-block:110px;background:#fff}
+.offer-in{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.offer-left{display:grid;gap:26px;position:sticky;top:30px}
+.offer-left h2{font-size:clamp(3rem,6.4vw,5.2rem);line-height:.95}
+.motto{font-family:var(--display);font-style:italic;font-size:clamp(2rem,4vw,3rem);color:var(--red);line-height:1}
+.vision{font-size:1.15rem;color:var(--muted);max-width:44ch}
+.vision b{color:var(--ink)}
+.offer-list{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.offer-list li{display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:center;background:var(--sky2,#eef6ff);background:linear-gradient(120deg,#f2f8ff,#fff6f8);border-radius:24px;padding:22px 26px}
+.orb{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff 0 12%,var(--o) 55%);box-shadow:0 10px 22px rgba(22,48,122,.18)}
+.offer-list b{display:block;font-size:1.3rem;font-weight:700;color:var(--ink);line-height:1.3}
+.offer-list span{color:var(--muted);font-size:1.05rem}
 
-/* photo essay, floating */
-.essay{padding-block:80px;border-top:3px solid var(--ink)}
-.essay h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:40px}
-.essay-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:34px 26px;align-items:start}
-.essay-grid figure{margin:0}
-.essay-grid img{width:100%;object-fit:cover;border:6px solid #fff;box-shadow:0 22px 44px rgba(22,48,122,.18)}
-.e1{grid-column:1/8;rotate:-1.2deg}.e1 img{aspect-ratio:3/2;border-radius:22px}
-.e2{grid-column:8/13;margin-top:40px}.e2 img{aspect-ratio:3/4;border-radius:999px 999px 22px 22px}
-.e3{grid-column:1/5}.e3 img{aspect-ratio:1;border-radius:50%}
-.e4{grid-column:5/13;rotate:1deg}.e4 img{aspect-ratio:16/9;border-radius:22px}
+/* photos */
+.photos{padding-block:120px}
+.ph-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:28px;align-items:start}
+.ph-grid figure{margin:0}
+.ph-grid img{width:100%;object-fit:cover;box-shadow:0 30px 60px rgba(22,48,122,.2)}
+.ph-grid figcaption{margin-top:14px;font-size:1rem;color:var(--muted);font-weight:500}
+.p1{grid-column:1/9}.p1 img{aspect-ratio:3/2;border-radius:32px}
+.p2{grid-column:9/13;margin-top:80px}.p2 img{aspect-ratio:3/4;border-radius:999px 999px 32px 32px}
+.p3{grid-column:1/5;margin-top:-40px}.p3 img{aspect-ratio:1;border-radius:50%}
+.p4{grid-column:5/13}.p4 img{aspect-ratio:16/9;border-radius:32px}
 
-/* night notice */
-.night{position:relative;overflow:hidden;color:#e6eaf6;padding-block:90px;background:linear-gradient(180deg,#0f1b4d 0%,#16307a 70%,#3b3a7a 100%)}
+/* night */
+.night{position:relative;overflow:hidden;color:#e6eaf6;padding-block:130px 150px;text-align:center;background:linear-gradient(180deg,#0f1b4d 0%,#16307a 70%,#3b3a7a 100%)}
 .night::before{content:"";position:absolute;inset:0;background-image:radial-gradient(#fff 1.2px,transparent 1.6px),radial-gradient(#cfe3ff 1px,transparent 1.4px);background-size:110px 90px,170px 130px;background-position:20px 30px,70px 60px;opacity:.55}
-.night .setting{position:absolute;width:420px;aspect-ratio:1;border-radius:50%;left:50%;bottom:-330px;transform:translateX(-50%);background:radial-gradient(circle,#ffe08a,var(--sun) 55%,#ff9b3d);box-shadow:0 0 140px 50px rgba(255,160,60,.35)}
-.night .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
-.night h2{color:#fff;font-size:clamp(2.4rem,5.6vw,4.6rem)}
-.night h2 i{color:var(--sun)}
-.night p{color:#c9d0e6;margin-top:18px;max-width:46ch}
-.box{background:rgba(255,255,255,.07);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);border-radius:22px;padding:28px;display:grid;gap:14px}
-.box .label{color:var(--sun)}
-.box b{font-family:var(--label);font-size:1.4rem;color:#fff;user-select:all}
-.box span{overflow-wrap:anywhere}
-.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
-.btn{font-family:var(--label);font-weight:600;font-size:.95rem;text-decoration:none;padding:14px 22px;border-radius:99px;border:1px solid #fff;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
-.btn:hover{transform:translateY(-2px)}
-.btn-sun{background:var(--sun);border-color:var(--sun);color:var(--ink)}
-footer{padding:28px 18px calc(28px + env(safe-area-inset-bottom,0px));text-align:center;font-family:var(--label);font-size:.8rem;color:var(--muted)}
+.setting{position:absolute;width:520px;aspect-ratio:1;border-radius:50%;left:50%;bottom:-420px;transform:translateX(-50%);background:radial-gradient(circle,#ffe08a,var(--sun) 55%,#ff9b3d);box-shadow:0 0 160px 60px rgba(255,160,60,.35)}
+.night-in{position:relative;z-index:2;display:grid;gap:24px;justify-items:center}
+.night h2{color:#fff;font-size:clamp(3rem,7.4vw,6rem);line-height:.95}
+.night p{color:#c9d0e6;font-size:1.2rem;max-width:46ch}
+.num{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.6rem);color:var(--sun);text-decoration:none;letter-spacing:.01em}
+.btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.btn{font-weight:700;font-size:1.05rem;text-decoration:none;padding:16px 30px;border-radius:99px;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.btn:hover{transform:translateY(-3px)}
+.btn-sun{background:var(--sun);color:var(--ink)}
+.btn-ghost{border:2px solid rgba(255,255,255,.7);color:#fff}
+.night .addr{font-size:1rem;color:#aab6de;overflow-wrap:anywhere}
+footer{padding:28px 18px calc(28px + env(safe-area-inset-bottom,0px));text-align:center;font-size:.9rem;color:var(--muted)}
 
 @media (max-width:900px){
-  .lead,.split,.night .wrap{grid-template-columns:1fr}
+  .story-in,.offer-in{grid-template-columns:1fr;gap:50px}
   .float{max-width:460px;width:100%;margin:0 auto}
-  .side{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:26px}
+  .offer-left{position:static}
   .rack{grid-template-columns:1fr 1fr}
-  .chains{height:70px}
-  .essay-grid{grid-template-columns:1fr 1fr}
-  .essay-grid figure{grid-column:auto!important;margin-top:0!important}
-  .e1,.e4{grid-column:1/-1!important}
+  .chains{height:60px}
+  .ph-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .ph-grid figure{grid-column:auto!important;margin-top:0!important}
+  .p1,.p4{grid-column:1/-1!important}
 }
-@media (max-width:520px){
+@media (max-width:540px){
   body{font-size:18px}
-  .mast-top span:nth-child(2){display:none}
+  .story,.classes,.offer,.photos{padding-block:80px}
+  .quote{padding-block:90px}
   .rack{grid-template-columns:1fr}
-  .chains{height:44px}
-  .sun{width:70vw;top:-10%}
+  .chains{height:40px}
+  .float{padding:0 30px 60px 0}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -173,90 +183,92 @@ footer{padding:28px 18px calc(28px + env(safe-area-inset-bottom,0px));text-align
     </div>
   </header>
 
-  <article class="wrap lead" id="story">
-    <figure class="float">
-      <div class="arch"><img src="/img/gate-car.jpg" alt="The Pathfinder Elite gate, flags and signboard on Ediba Lane"></div>
-      <div class="bubble"><img src="/img/thumb/swings-pair.jpg" alt="Two pupils on the swings"></div>
-      <figcaption>The gate on Ediba Lane, and two pupils on the other side of it.</figcaption>
-    </figure>
-    <div>
-      <span class="label kick">The school</span>
-      <h2>Behind the blue gates, a small world of its own</h2>
-      <p class="sub">Painted goldfish, a bee in glasses, and teachers who know every child by name.</p>
-      <p class="byline">Pathfinder Elite International Schools · #9 Ediba Lane, off Ediba Road</p>
-      <div class="body">
-        <p class="drop">Walk past the three flags and the signboard and the walls turn sky blue and navy. A goldfish swims above the swings, a girl with a backpack runs across a green hill, and a bee in glasses waves from the gate. Inside, children in yellow check uniforms learn their sounds with Jolly Phonics, practise their numbers and queue for the swings.</p>
-        <p>Pathfinder Elite takes children from Creche through Primary. They move up through the same school with the same faces and routines, so no year starts among strangers.</p>
+  <section class="story" id="story">
+    <div class="wrap story-in">
+      <div class="float" aria-hidden="false">
+        <div class="arch"><img src="/img/gate-car.jpg" alt="The Pathfinder Elite gate, flags and signboard on Ediba Lane"></div>
+        <div class="bubble"><img src="/img/thumb/swings-pair.jpg" alt="Two pupils on the swings"></div>
+        <svg class="fish small" viewBox="0 0 120 70" aria-hidden="true"><path d="M8 35c18-26 58-30 82-8l22-16-6 24 6 24-22-16C66 65 26 61 8 35z" fill="#ff7a6b"/><circle cx="28" cy="31" r="5" fill="#fff"/><circle cx="27" cy="31" r="2.6" fill="#14296b"/></svg>
+      </div>
+      <div class="story-copy">
+        <span class="pill">The school</span>
+        <h2>Behind the blue gates, a small world of its own</h2>
+        <p class="big">Goldfish swim across the walls. A bee in glasses waves from the gate. And every teacher knows every child by name.</p>
+        <p>Pathfinder Elite takes children from Creche through Primary. They grow up in the same school with the same faces and routines, learning to read with Jolly Phonics, practising their numbers, and queueing happily for the swings.</p>
+        <a class="link" href="#classes">See the four classes</a>
       </div>
     </div>
-  </article>
-
-  <section class="pull" aria-label="Our mission">
-    <div class="cloud c1" aria-hidden="true" style="top:20%;left:4%"></div><div class="cloud c2" aria-hidden="true" style="bottom:18%;right:6%"></div>
-    <blockquote class="wrap">
-      <p>“Raising determined, disciplined and God-fearing learners that will make a positive impact in our society.”</p>
-      <cite class="label">Our mission</cite>
-    </blockquote>
   </section>
 
-  <section class="wrap contents" id="classes">
-    <div class="contents-head">
-      <h2>In this school</h2>
-      <p>Four sections hanging from the same swing frame. Registration is ongoing into all of them.</p>
+  <section class="quote" aria-label="Our mission">
+    <div class="cloud q1" aria-hidden="true"></div><div class="cloud q2" aria-hidden="true"></div>
+    <div class="wrap">
+      <blockquote>
+        <p>Raising determined, disciplined and God-fearing learners that will make a positive impact in our society.</p>
+        <cite>Our mission</cite>
+      </blockquote>
     </div>
-    <ol class="rack">
-      <li class="seat"><div class="chains" aria-hidden="true"></div><div class="plank"><span class="label">Open</span><h3>Creche</h3><p>Loving care, gentle routines and sensory play for our youngest pupils.</p></div></li>
-      <li class="seat"><div class="chains" aria-hidden="true"></div><div class="plank"><span class="label">Open</span><h3>Reception</h3><p>A smooth first step into the classroom, with songs, shapes and first letters.</p></div></li>
-      <li class="seat"><div class="chains" aria-hidden="true"></div><div class="plank"><span class="label">Open</span><h3>Nursery</h3><p>Jolly Phonics, early numbers, art and music that build confident young readers.</p></div></li>
-      <li class="seat"><div class="chains" aria-hidden="true"></div><div class="plank"><span class="label">Open</span><h3>Primary</h3><p>English, mathematics, science and more, taught with discipline and care.</p></div></li>
-    </ol>
   </section>
 
-  <section class="wrap split" id="services">
-    <div>
-      <h2>What a place includes</h2>
-      <ul class="svc">
-        <li><div><b>Jolly Phonics classes</b><span>Reading and spelling taught through sounds and actions.</span></div></li>
-        <li><div><b>Dedicated staff</b><span>Teachers committed to every child’s progress.</span></div></li>
-        <li><div><b>School bus services</b><span>Safe transport to and from school.</span></div></li>
-        <li><div><b>After school care</b><span>A supervised space after the school day ends.</span></div></li>
-        <li><div><b>Social clubs</b><span>Friendships, teamwork and talents.</span></div></li>
+  <section class="classes" id="classes">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Four classes, one swing</h2>
+        <p>Registration is ongoing into every class. Children move up with the same faces and routines.</p>
+      </div>
+      <ol class="rack">
+        <li class="seat" style="--c:#ff7a6b"><div class="chains" aria-hidden="true"></div><div class="plank"><h3>Creche</h3><p>Loving care, gentle routines and sensory play for our youngest pupils.</p></div></li>
+        <li class="seat" style="--c:#2fb3a0"><div class="chains" aria-hidden="true"></div><div class="plank"><h3>Reception</h3><p>A smooth first step into the classroom, with songs, shapes and first letters.</p></div></li>
+        <li class="seat" style="--c:#ffcf26;--t:#16307a"><div class="chains" aria-hidden="true"></div><div class="plank"><h3>Nursery</h3><p>Jolly Phonics, early numbers, art and music that build confident readers.</p></div></li>
+        <li class="seat" style="--c:#16307a"><div class="chains" aria-hidden="true"></div><div class="plank"><h3>Primary</h3><p>English, maths, science and more, taught with discipline and care.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="offer" id="services">
+    <div class="wrap offer-in">
+      <div class="offer-left">
+        <h2>What every place includes</h2>
+        <p class="motto">Determination Personified</p>
+        <p class="vision"><b>Our vision:</b> to build a school that will stand the test of time by raising determined learners of character and excellence.</p>
+      </div>
+      <ul class="offer-list">
+        <li><span class="orb" style="--o:#ff7a6b"></span><div><b>Jolly Phonics classes</b><span>Reading and spelling through sounds and actions.</span></div></li>
+        <li><span class="orb" style="--o:#ffcf26"></span><div><b>Dedicated staff</b><span>Teachers committed to every child's progress.</span></div></li>
+        <li><span class="orb" style="--o:#4fb6f0"></span><div><b>School bus services</b><span>Safe transport to and from school.</span></div></li>
+        <li><span class="orb" style="--o:#2fb3a0"></span><div><b>After school care</b><span>Supervised until you arrive.</span></div></li>
+        <li><span class="orb" style="--o:#a48cff"></span><div><b>Social clubs</b><span>Friendships, teamwork and talents.</span></div></li>
       </ul>
     </div>
-    <aside class="side">
-      <p class="motto">Determination Personified</p>
-      <div><h3>Our vision</h3><p>To build a school that will stand the test of time by raising determined learners of character and excellence.</p></div>
-    </aside>
   </section>
 
-  <section class="wrap essay" id="essay">
-    <h2>A morning at Pathfinder, in pictures</h2>
-    <div class="essay-grid">
-      <figure class="e1"><img src="/img/thumb/playground.jpg" alt="Pupils laughing together at the swings" loading="lazy"><figcaption>Break time under the goldfish mural.</figcaption></figure>
-      <figure class="e2"><img src="/img/thumb/swings-girls.jpg" alt="Two girls in uniform at the swings" loading="lazy"><figcaption>Waiting for a swing.</figcaption></figure>
-      <figure class="e3"><img src="/img/thumb/seesaw-swings-2.jpg" alt="Pupils on the see-saw and swings" loading="lazy"><figcaption>Swinging high at break time.</figcaption></figure>
-      <figure class="e4"><img src="/img/thumb/garden-mural.jpg" alt="Painted tyre garden beside a mural of a running girl" loading="lazy"><figcaption>The tyre garden, painted in the same blues and reds as the playground curb.</figcaption></figure>
+  <section class="photos" id="essay">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>A morning at Pathfinder</h2>
+        <p>Real photographs from the playground on Ediba Lane.</p>
+      </div>
+      <div class="ph-grid">
+        <figure class="p1"><img src="/img/thumb/playground.jpg" alt="Pupils laughing together at the swings"><figcaption>Break time under the goldfish mural</figcaption></figure>
+        <figure class="p2"><img src="/img/thumb/swings-girls.jpg" alt="Two girls in uniform at the swings"><figcaption>Waiting for a swing</figcaption></figure>
+        <figure class="p3"><img src="/img/thumb/seesaw-swings-2.jpg" alt="Pupils on the see-saw and swings"><figcaption>Swinging high</figcaption></figure>
+        <figure class="p4"><img src="/img/thumb/garden-mural.jpg" alt="Painted tyre garden beside a mural of a running girl"><figcaption>The painted tyre garden</figcaption></figure>
+      </div>
     </div>
   </section>
 
   <section class="night" id="admissions">
     <div class="setting" aria-hidden="true"></div>
-    <div class="wrap">
-      <div>
-        <span class="label" style="color:var(--sun)">Admissions notice</span>
-        <h2>Registration is <i>ongoing</i></h2>
-        <p>Speak to the Principal directly by phone or WhatsApp, or come to the gate on Ediba Lane and ask to see the school.</p>
+    <div class="wrap night-in">
+      <span class="pill pill-sun">Registration is ongoing</span>
+      <h2>Come and see the school</h2>
+      <p>Speak to the Principal on WhatsApp or by phone, or come to the blue gates on Ediba Lane.</p>
+      <a class="num" href="tel:+2348033483918">+234 803 348 3918</a>
+      <div class="btns">
+        <a class="btn btn-sun" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">WhatsApp the Principal</a>
+        <a class="btn btn-ghost" href="tel:+2348033483918">Call</a>
       </div>
-      <div class="box">
-        <span class="label">Principal · call or WhatsApp</span>
-        <b>+234 803 348 3918</b>
-        <span>#9 Ediba Lane, off Ediba Road, Calabar Municipality</span>
-        <span>pathfinderinternational@gmail.com</span>
-        <div class="btns">
-          <a class="btn btn-sun" href="https://wa.me/2348033483918?text=Hello%2C%20I%27d%20like%20to%20ask%20about%20admission%20at%20Pathfinder%20Elite." target="_blank" rel="noopener">WhatsApp the Principal</a>
-          <a class="btn" href="tel:+2348033483918">Call</a>
-        </div>
-      </div>
+      <p class="addr">#9 Ediba Lane, off Ediba Road, Calabar Municipality · pathfinderinternational@gmail.com</p>
     </div>
   </section>
 </main>
